@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const FruitsHub());
+  runApp(const FruitsHub
+  
+  ());
 }
 
 class FruitsHub extends StatelessWidget {
