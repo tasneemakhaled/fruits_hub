@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/feartures/splash/presentation/views/splash_view.dart';
 
 void main() {
   runApp(const FruitsHub
@@ -13,4 +14,7 @@ class FruitsHub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: SplashView(),
     );}}
+
+    // flutter launcher icons for app icon
