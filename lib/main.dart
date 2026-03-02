@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/helper_functions/on_generate_routes.dart';
 import 'package:fruits_hub/feartures/splash/presentation/views/splash_view.dart';
 
 void main() {
@@ -14,7 +15,8 @@ class FruitsHub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: SplashView(),
+      onGenerateRoute: onGenerateRoute,
+      initialRoute: SplashView.routeName,
     );}}
 
     // flutter launcher icons for app icon
