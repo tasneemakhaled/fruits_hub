@@ -3,9 +3,7 @@ import 'package:fruits_hub/core/helper_functions/on_generate_routes.dart';
 import 'package:fruits_hub/feartures/splash/presentation/views/splash_view.dart';
 
 void main() {
-  runApp(const FruitsHub
-  
-  ());
+  runApp(const FruitsHub());
 }
 
 class FruitsHub extends StatelessWidget {
