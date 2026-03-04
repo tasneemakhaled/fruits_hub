@@ -15,12 +15,20 @@ class CustomOnboaringPageView extends StatelessWidget {
            onBoardingImage: Assets.assetsImagesOnboarding1,
             subTitle: 'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.', 
             title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('مرحبًا بك في'),
-                Text('Fruit'),
+                Text('مرحبًا بك في '),
                 Text('HUB'),
+                Text('Fruit'),
+                
               ],
-            ))
+            )),
+             PageViewItem(
+          
+          backgroundImage: Assets.assetsImagesVector2,
+           onBoardingImage: Assets.assetsImagesOnboarding2,
+            subTitle:'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية', 
+            title:Text('ابحث وتسوق')),
       ],);
   }
 }

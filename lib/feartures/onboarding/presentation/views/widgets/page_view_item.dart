@@ -17,7 +17,10 @@ final Widget title;
          children: [
           
            Positioned.fill(child: SvgPicture.asset(backgroundImage,color: Color(0xffFDF4E2),fit: BoxFit.fill,))   ,
-            Text('تخط',style: TextStyle(decoration: TextDecoration.underline),),
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: Text('تخط',style: TextStyle(decoration: TextDecoration.underline),),
+            ),
            Positioned(
             bottom: 0,
             left: 0,
@@ -27,8 +30,13 @@ final Widget title;
          ],
        ),
      ),
-     title,
-     Text(subTitle),
+     SizedBox(height: 32,)
+     ,title,
+     SizedBox(height: 12,),
+     Padding(
+       padding: const EdgeInsets.symmetric(horizontal: 16.0),
+       child: Text(subTitle,textAlign: TextAlign.center,),
+     ),
 
       ],
     );
