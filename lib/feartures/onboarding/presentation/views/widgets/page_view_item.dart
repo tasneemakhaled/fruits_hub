@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PageViewItem extends StatelessWidget {
-  const PageViewItem({super.key, required this.backgroundImage, required this.onBoardingImage, required this.subTitle, required this.title});
+  const PageViewItem({super.key, required this.backgroundImage, required this.onBoardingImage, required this.subTitle, required this.title, required this.isVisible});
 final String backgroundImage,onBoardingImage;
 final String subTitle;
 final Widget title;
+final bool isVisible;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,9 +18,12 @@ final Widget title;
          children: [
           
            Positioned.fill(child: SvgPicture.asset(backgroundImage,color: Color(0xffFDF4E2),fit: BoxFit.fill,))   ,
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Text('تخط',style: TextStyle(decoration: TextDecoration.underline),),
+            Visibility(
+              visible: isVisible,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Text('تخط',style: TextStyle(decoration: TextDecoration.underline),),
+              ),
             ),
            Positioned(
             bottom: 0,
