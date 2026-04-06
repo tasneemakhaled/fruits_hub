@@ -13,7 +13,7 @@ final PageController pageController;
       controller: pageController,
       children: [
         PageViewItem(
-          isVisible:(pageController.hasClients ?  pageController.page!.round() :0  )==0,
+          isVisible:true,
           backgroundImage: Assets.assetsImagesVector1,
            onBoardingImage: Assets.assetsImagesOnboarding1,
             subTitle: 'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.', 
@@ -27,7 +27,7 @@ final PageController pageController;
               ],
             )),
              PageViewItem(
-          isVisible: ( pageController.hasClients? pageController.page!.round():0)==0,
+          isVisible: false,
           backgroundImage: Assets.assetsImagesVector2,
            onBoardingImage: Assets.assetsImagesOnboarding2,
             subTitle:'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية', 
