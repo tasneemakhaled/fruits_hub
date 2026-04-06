@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/utils/app_colors.dart';
+import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constants/app_images.dart';
 import 'package:fruits_hub/feartures/onboarding/presentation/views/widgets/page_view_item.dart';
 
@@ -18,9 +20,9 @@ final PageController pageController;
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('مرحبًا بك في '),
-                Text('HUB'),
-                Text('Fruit'),
+                Text('مرحبًا بك في',style: TextStyles.bold23,),
+                Text(' HUB',style: TextStyles.bold23.copyWith(color: AppColors.secondaryColor),),
+                Text('Fruit',style: TextStyles.bold23.copyWith(color: AppColors.primaryColor),),
                 
               ],
             )),
@@ -29,7 +31,7 @@ final PageController pageController;
           backgroundImage: Assets.assetsImagesVector2,
            onBoardingImage: Assets.assetsImagesOnboarding2,
             subTitle:'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية', 
-            title:Text('ابحث وتسوق')),
+            title:Text('ابحث وتسوق',style: TextStyles.bold23,)),
       ],);
   }
 }
