@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.hintText,  this.suffixIcon});
+  const CustomTextField({super.key, required this.hintText,  this.suffixIcon, this.keyboardType});
 final String hintText;
 final Widget? suffixIcon;
+final TextInputType? keyboardType;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         suffixIcon:suffixIcon ,
         fillColor: Color(0xfff9fafa),

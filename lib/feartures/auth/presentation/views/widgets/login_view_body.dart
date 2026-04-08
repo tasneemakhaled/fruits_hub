@@ -14,47 +14,52 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
-        children: [
-          CustomTextField(hintText: 'البريد الإلكتروني'),
-          SizedBox(height: 10,),
-           CustomTextField(hintText: 'كلمة المرور',suffixIcon: Icon(Icons.visibility,color: Color(0xff949D9E),),),
-           SizedBox(height: 8,),
-           Align(
-            alignment: Alignment.centerLeft,
-            child: Text('نسيت كلمة المرور؟',style: TextStyles.semiBold13.copyWith(color: Color(0xff2D9F5D)),)),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 16,),
+            CustomTextField(hintText: 'البريد الإلكتروني',keyboardType: TextInputType.emailAddress,),
             SizedBox(height: 10,),
-            CustomButton(text: 'تسجيل دخول',onPressed: (){},),
-            SizedBox(height: 10,),
+             CustomTextField(
+              keyboardType: TextInputType.visiblePassword,
+              hintText: 'كلمة المرور',suffixIcon: Icon(Icons.visibility,color: Color(0xff949D9E),),),
+             SizedBox(height: 8,),
+             Align(
+              alignment: Alignment.centerLeft,
+              child: Text('نسيت كلمة المرور؟',style: TextStyles.semiBold13.copyWith(color: Color(0xff2D9F5D)),)),
+              SizedBox(height: 10,),
+              CustomButton(text: 'تسجيل دخول',onPressed: (){},),
+              SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:[
+              Text('لا تمتلك حساب؟ ',style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),),
+              TextButton(
+                onPressed: (){
+             Navigator.pushReplacementNamed(context, SignUpView.routeName);
+                },
+               child:Text('قم بانشاء حساب',style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),) ),
+              ] ),
+              SizedBox(height: 24,),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children:[
-            Text('لا تمتلك حساب؟ ',style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),),
-            TextButton(
-              onPressed: (){
-           Navigator.pushReplacementNamed(context, SignUpView.routeName);
-              },
-             child:Text('قم بانشاء حساب',style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),) ),
-            ] ),
-            SizedBox(height: 24,),
-          Row(
-  children: [
-    Expanded(child: Divider(color: Color(0xffE6E9EA))),
-    Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: Text('أو', style: TextStyle(color: Color(0xff0C0D0D))),
-    ),
-    
-    Expanded(child: Divider(color: Color(0xffE6E9EA))),
-  ],
-),
-SizedBox(height: 8,),
-CustomLoginMethodButton(leading: SvgPicture.asset(Assets.assetsImagesGoogleIcon),title: Text('تسجيل بواسطة جوجل'),),
-SizedBox(height: 10,),
-CustomLoginMethodButton(leading: SvgPicture.asset(Assets.assetsImagesAppleIcon),title: Text('تسجيل بواسطة أبل'),),
-SizedBox(height: 10,),
-CustomLoginMethodButton(leading: SvgPicture.asset(Assets.assetsImagesFacebookIcon),title: Text('تسجيل بواسطة فيسبوك'),),
-        ],
+          children: [
+            Expanded(child: Divider(color: Color(0xffE6E9EA))),
+            Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: Text('أو', style: TextStyle(color: Color(0xff0C0D0D))),
+            ),
+            
+            Expanded(child: Divider(color: Color(0xffE6E9EA))),
+          ],
+        ),
+        SizedBox(height: 8,),
+        CustomLoginMethodButton(leading: SvgPicture.asset(Assets.assetsImagesGoogleIcon),title: Text('تسجيل بواسطة جوجل'),),
+        SizedBox(height: 10,),
+        CustomLoginMethodButton(leading: SvgPicture.asset(Assets.assetsImagesAppleIcon),title: Text('تسجيل بواسطة أبل'),),
+        SizedBox(height: 10,),
+        CustomLoginMethodButton(leading: SvgPicture.asset(Assets.assetsImagesFacebookIcon),title: Text('تسجيل بواسطة فيسبوك'),),
+          ],
+        ),
       ),
     );
   }

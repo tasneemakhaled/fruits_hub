@@ -8,11 +8,14 @@ static const routeName='login';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+    
       appBar: AppBar(
+        backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: (){},
+          onPressed: (){
+            Navigator.pop(context);
+          },
          icon: Icon( Icons.arrow_back_ios)),
         title: Text('تسجيل الدخول',style: TextStyles.bold19,),
       ),
