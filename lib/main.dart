@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/helper_functions/on_generate_routes.dart';
+import 'package:fruits_hub/core/services/shared_prefrences_single_ton.dart';
 import 'package:fruits_hub/feartures/splash/presentation/views/splash_view.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
-void main() {
+void main() async{
+  await SharedPrefrencesSingleTon.init();
   runApp(const FruitsHub());
 }
 
