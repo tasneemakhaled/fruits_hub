@@ -6,6 +6,6 @@ class CustomDotsIndicator extends StatelessWidget {
 final  currentPage;
   @override
   Widget build(BuildContext context) {
-    return DotsIndicator(dotsCount: 2,decorator: DotsDecorator(activeColor: AppColors.primaryColor,color:currentPage==1?AppColors.primaryColor: Color(0xff5DB957)),);
+    return DotsIndicator(dotsCount: 2,decorator: DotsDecorator(activeColor: AppColors.darkPrimaryColor,color:currentPage==1?AppColors.darkPrimaryColor: Color(0xff5DB957)),);
   }
 }

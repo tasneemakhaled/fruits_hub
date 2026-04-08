@@ -12,7 +12,7 @@ final String text;
       width: double.infinity,
       child: ElevatedButton(
         
-        style: ElevatedButton.styleFrom(backgroundColor: AppColors.primaryColor,shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(16))),
+        style: ElevatedButton.styleFrom(backgroundColor: AppColors.darkPrimaryColor,shape: RoundedRectangleBorder(borderRadius: BorderRadiusGeometry.circular(16))),
         onPressed: onPressed, child: Text(text,style: TextStyle(color: Colors.white),)),
     );
   }

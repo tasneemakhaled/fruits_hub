@@ -22,7 +22,7 @@ final PageController pageController;
               children: [
                 Text('مرحبًا بك في',style: TextStyles.bold23,),
                 Text(' HUB',style: TextStyles.bold23.copyWith(color: AppColors.secondaryColor),),
-                Text('Fruit',style: TextStyles.bold23.copyWith(color: AppColors.primaryColor),),
+                Text('Fruit',style: TextStyles.bold23.copyWith(color: AppColors.darkPrimaryColor),),
                 
               ],
             )),
