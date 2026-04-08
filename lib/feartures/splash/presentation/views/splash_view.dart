@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/services/shared_prefrences_single_ton.dart';
+import 'package:fruits_hub/feartures/auth/presentation/views/login_view.dart';
 import 'package:fruits_hub/feartures/onboarding/presentation/views/onboarding_view.dart';
 import 'package:fruits_hub/feartures/splash/presentation/views/widgets/splash_view_body.dart';
 
@@ -26,6 +29,15 @@ class _SplashViewState extends State<SplashView> {
     );
   }
   void executeNavigation() {
-    Future.delayed(Duration(seconds: 2),() => Navigator.pushReplacementNamed(context, OnboardingView.routeName));
+    bool isOnboardingViewSeen=SharedPrefrencesSingleTon.getBool(kIsOnboardingViewSeen);
+    Future.delayed(Duration(seconds: 2),() {
+
+      if (isOnboardingViewSeen) {
+  Navigator.pushReplacementNamed(context, LoginView.routeName);
+}
+else{
+   Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+}
+    } );
   }
 }

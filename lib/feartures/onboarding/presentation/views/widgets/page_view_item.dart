@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/services/shared_prefrences_single_ton.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/login_view.dart';
 
@@ -26,6 +28,7 @@ final bool isVisible;
                 padding: const EdgeInsets.only(right: 8.0),
                 child: GestureDetector(
                   onTap: (){
+                       SharedPrefrencesSingleTon.setBool(kIsOnboardingViewSeen, true);
                      Navigator.pushReplacementNamed(context, LoginView.routeName);
                   },
                   child: Text('تخط',style:TextStyles.regular13)),

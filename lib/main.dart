@@ -5,6 +5,7 @@ import 'package:fruits_hub/feartures/splash/presentation/views/splash_view.dart'
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   await SharedPrefrencesSingleTon.init();
   runApp(const FruitsHub());
 }

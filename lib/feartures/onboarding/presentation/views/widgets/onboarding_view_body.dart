@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/constants.dart';
+import 'package:fruits_hub/core/services/shared_prefrences_single_ton.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/login_view.dart';
 import 'package:fruits_hub/feartures/onboarding/presentation/views/widgets/custom_dots_indicator.dart';
 import 'package:fruits_hub/feartures/onboarding/presentation/views/widgets/custom_onboarding_button.dart';
@@ -39,6 +41,7 @@ setState(() {
             maintainState:true,
             visible: currnentPage==1,
             child: CustomOnboardingButton(text: 'ابدأ الان',onPressed: (){
+              SharedPrefrencesSingleTon.setBool(kIsOnboardingViewSeen, true);
               Navigator.pushReplacementNamed(context, LoginView.routeName);
             },)),
         ),
