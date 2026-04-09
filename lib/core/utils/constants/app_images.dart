@@ -10,6 +10,10 @@ class Assets {
   /// assets/images/apple_icon.svg
   static const String assetsImagesAppleIcon = "assets/images/apple_icon.svg";
 
+  /// Assets for assetsImagesCheck
+  /// assets/images/check.svg
+  static const String assetsImagesCheck = "assets/images/check.svg";
+
   /// Assets for assetsImagesCircles
   /// assets/images/circles.svg
   static const String assetsImagesCircles = "assets/images/circles.svg";

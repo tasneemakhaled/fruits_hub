@@ -13,7 +13,7 @@ class DontHaveAnAccountWidget extends StatelessWidget {
               Text('لا تمتلك حساب؟ ',style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),),
               GestureDetector(
                onTap: (){
-              Navigator.pushReplacementNamed(context, SignUpView.routeName);
+              Navigator.pushNamed(context, SignUpView.routeName);
                },
                child: Text('قم بانشاء حساب',style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),)),
               ] );
