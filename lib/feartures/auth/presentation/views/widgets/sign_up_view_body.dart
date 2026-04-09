@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/login_view.dart';
+import 'package:fruits_hub/feartures/auth/presentation/views/widgets/already_have_account.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/custom_text_field.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/terms_and_conditions_widget.dart';
 
@@ -31,17 +32,11 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
               hintText: 'كلمة المرور',suffixIcon: Icon(Icons.visibility,color: Color(0xff949D9E),),),
             SizedBox(height: 16,),
             TermsAndConditionsWidget(),
-            SizedBox(height: 8,),
+            SizedBox(height: 30,),
             CustomButton(text: 'إنشاء حساب جديد',onPressed: (){},),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('تمتلك حساب بالفعل؟',style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),),
-                TextButton(onPressed: (){
-                  Navigator.pushReplacementNamed(context, LoginView.routeName);
-                }, child: Text('تسجيل الدخول',style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),),),
-              ],
-            )
+            SizedBox(height: 24,),
+           AlreadyHaveAccount(),
+            
           ],
         ),
       ),
