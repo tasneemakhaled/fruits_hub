@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/helper_functions/on_generate_routes.dart';
+import 'package:fruits_hub/core/services/get_it_service.dart';
 import 'package:fruits_hub/core/services/shared_prefrences_single_ton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/feartures/splash/presentation/views/splash_view.dart';
@@ -13,6 +14,7 @@ void main() async{
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await SharedPrefrencesSingleTon.init();
+  setUpGetIt();
   runApp(const FruitsHub());
 }
 

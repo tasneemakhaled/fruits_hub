@@ -2,13 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.hintText,  this.suffixIcon, this.keyboardType});
+  const CustomTextField({super.key, required this.hintText,  this.suffixIcon, this.keyboardType, this.onSaved});
 final String hintText;
 final Widget? suffixIcon;
 final TextInputType? keyboardType;
+final void Function(String?)? onSaved;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onSaved: onSaved,
+      validator: (value){
+    if(value==null||value.isEmpty){
+      return 'هذا الحقل مطلوب';
+    }else{
+      return null;
+    }
+      },
       keyboardType: keyboardType,
       decoration: InputDecoration(
         suffixIcon:suffixIcon ,

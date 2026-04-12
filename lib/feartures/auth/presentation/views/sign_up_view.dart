@@ -4,7 +4,8 @@ import 'package:fruits_hub/core/services/get_it_service.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/feartures/auth/domain/repos/auth_repo.dart';
 import 'package:fruits_hub/feartures/auth/presentation/view_models/cubits/SignUp/sign_up_cubit.dart';
-import 'package:fruits_hub/feartures/auth/presentation/views/widgets/sign_up_view_body.dart';
+import 'package:fruits_hub/feartures/auth/presentation/views/widgets/bloc_consumer_signup_view_body.dart';
+
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -23,7 +24,7 @@ class SignUpView extends StatelessWidget {
           ),
           title: Text('حساب جديد', style: TextStyles.bold19),
         ),
-        body: SignUpViewBody(),
+        body: BlocConsumerSignupViewBody(),
       ),
     );
   }
