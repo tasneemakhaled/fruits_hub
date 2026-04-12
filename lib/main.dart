@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/helper_functions/on_generate_routes.dart';
+import 'package:fruits_hub/core/services/custom_bloc_observer.dart';
 import 'package:fruits_hub/core/services/get_it_service.dart';
 import 'package:fruits_hub/core/services/shared_prefrences_single_ton.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
@@ -15,6 +17,7 @@ void main() async{
   );
   await SharedPrefrencesSingleTon.init();
   setUpGetIt();
+  Bloc.observer=CustomBlocObserver();
   runApp(const FruitsHub());
 }
 
