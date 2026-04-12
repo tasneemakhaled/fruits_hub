@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
+import 'package:fruits_hub/core/widgets/password_field.dart';
 import 'package:fruits_hub/feartures/auth/presentation/view_models/cubits/SignUp/sign_up_cubit.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/already_have_account.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/custom_text_field.dart';
@@ -39,12 +40,9 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                 },
                 hintText: 'البريد الإلكتروني',keyboardType: TextInputType.emailAddress,),
               SizedBox(height: 10,),
-              CustomTextField(
-                onSaved: (value){
-                  password=value!;
-                },
-                keyboardType: TextInputType.visiblePassword,
-                hintText: 'كلمة المرور',suffixIcon: Icon(Icons.visibility,color: Color(0xff949D9E),),),
+            PasswordField(onSaved: (value){
+              password=value!;
+            },),
               SizedBox(height: 16,),
               TermsAndConditionsWidget(),
               SizedBox(height: 30,),
@@ -66,3 +64,4 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
     );
   }
 }
+
