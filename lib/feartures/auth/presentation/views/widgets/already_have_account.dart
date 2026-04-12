@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
-import 'package:fruits_hub/feartures/auth/presentation/views/login_view.dart';
 
 class AlreadyHaveAccount extends StatelessWidget {
   const AlreadyHaveAccount({super.key});
