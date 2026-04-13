@@ -7,7 +7,7 @@ import 'package:fruits_hub/feartures/splash/presentation/views/widgets/splash_vi
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
-static const routeName='splash';
+  static const routeName = 'splash';
 
   @override
   State<SplashView> createState() => _SplashViewState();
@@ -20,24 +20,21 @@ class _SplashViewState extends State<SplashView> {
     super.initState();
   }
 
-  
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-    
-      body: SafeArea(child: SplashViewBody())
-    );
+    return Scaffold(body: SafeArea(child: SplashViewBody()));
   }
-  void executeNavigation() {
-    bool isOnboardingViewSeen=SharedPrefrencesSingleTon.getBool(kIsOnboardingViewSeen);
-    Future.delayed(Duration(seconds: 2),() {
 
+  void executeNavigation() {
+    bool isOnboardingViewSeen = SharedPrefrencesSingleTon.getBool(
+      kIsOnboardingViewSeen,
+    );
+    Future.delayed(Duration(seconds: 2), () {
       if (isOnboardingViewSeen) {
-  Navigator.pushReplacementNamed(context, LoginView.routeName);
-}
-else{
-   Navigator.pushReplacementNamed(context, OnboardingView.routeName);
-}
-    } );
+        Navigator.pushReplacementNamed(context, LoginView.routeName);
+      } else {
+        Navigator.pushReplacementNamed(context, OnboardingView.routeName);
+      }
+    });
   }
 }

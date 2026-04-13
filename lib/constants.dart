@@ -1,1 +1,1 @@
-const kIsOnboardingViewSeen='KIsOnboardingViewSeen';
+const kIsOnboardingViewSeen = 'KIsOnboardingViewSeen';

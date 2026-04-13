@@ -6,7 +6,6 @@ import 'package:fruits_hub/feartures/auth/domain/repos/auth_repo.dart';
 import 'package:fruits_hub/feartures/auth/presentation/view_models/cubits/SignUp/sign_up_cubit.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/bloc_consumer_signup_view_body.dart';
 
-
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
   static const routeName = 'signUp';

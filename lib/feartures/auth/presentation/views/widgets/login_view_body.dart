@@ -18,28 +18,46 @@ class LoginViewBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 16,),
-            CustomTextField(hintText: 'البريد الإلكتروني',keyboardType: TextInputType.emailAddress,),
-            SizedBox(height: 10,),
-             CustomTextField(
+            SizedBox(height: 16),
+            CustomTextField(
+              hintText: 'البريد الإلكتروني',
+              keyboardType: TextInputType.emailAddress,
+            ),
+            SizedBox(height: 10),
+            CustomTextField(
               keyboardType: TextInputType.visiblePassword,
-              hintText: 'كلمة المرور',suffixIcon: Icon(Icons.visibility,color: Color(0xff949D9E),),),
-             SizedBox(height: 8,),
-             Align(
+              hintText: 'كلمة المرور',
+              suffixIcon: Icon(Icons.visibility, color: Color(0xff949D9E)),
+            ),
+            SizedBox(height: 8),
+            Align(
               alignment: Alignment.centerLeft,
-              child: Text('نسيت كلمة المرور؟',style: TextStyles.semiBold13.copyWith(color: Color(0xff2D9F5D)),)),
-              SizedBox(height: 10,),
-              CustomButton(text: 'تسجيل دخول',onPressed: (){},),
-              SizedBox(height: 16,),
-             const  DontHaveAnAccountWidget(),
-              SizedBox(height: 32,),
-              const  OrDivider(),
-        SizedBox(height: 16,),
-        SocailLoginButton(leading: SvgPicture.asset(Assets.assetsImagesGoogleIcon),title: Text('تسجيل بواسطة جوجل'),),
-        SizedBox(height: 10,),
-        SocailLoginButton(leading: SvgPicture.asset(Assets.assetsImagesAppleIcon),title: Text('تسجيل بواسطة أبل'),),
-        SizedBox(height: 10,),
-        SocailLoginButton(leading: SvgPicture.asset(Assets.assetsImagesFacebookIcon),title: Text('تسجيل بواسطة فيسبوك'),),
+              child: Text(
+                'نسيت كلمة المرور؟',
+                style: TextStyles.semiBold13.copyWith(color: Color(0xff2D9F5D)),
+              ),
+            ),
+            SizedBox(height: 10),
+            CustomButton(text: 'تسجيل دخول', onPressed: () {}),
+            SizedBox(height: 16),
+            const DontHaveAnAccountWidget(),
+            SizedBox(height: 32),
+            const OrDivider(),
+            SizedBox(height: 16),
+            SocailLoginButton(
+              leading: SvgPicture.asset(Assets.assetsImagesGoogleIcon),
+              title: Text('تسجيل بواسطة جوجل'),
+            ),
+            SizedBox(height: 10),
+            SocailLoginButton(
+              leading: SvgPicture.asset(Assets.assetsImagesAppleIcon),
+              title: Text('تسجيل بواسطة أبل'),
+            ),
+            SizedBox(height: 10),
+            SocailLoginButton(
+              leading: SvgPicture.asset(Assets.assetsImagesFacebookIcon),
+              title: Text('تسجيل بواسطة فيسبوك'),
+            ),
           ],
         ),
       ),

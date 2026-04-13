@@ -8,14 +8,22 @@ class DontHaveAnAccountWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:[
-              Text('لا تمتلك حساب؟ ',style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),),
-              GestureDetector(
-               onTap: (){
-              Navigator.pushNamed(context, SignUpView.routeName);
-               },
-               child: Text('قم بانشاء حساب',style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),)),
-              ] );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'لا تمتلك حساب؟ ',
+          style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),
+        ),
+        GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, SignUpView.routeName);
+          },
+          child: Text(
+            'قم بانشاء حساب',
+            style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),
+          ),
+        ),
+      ],
+    );
   }
 }

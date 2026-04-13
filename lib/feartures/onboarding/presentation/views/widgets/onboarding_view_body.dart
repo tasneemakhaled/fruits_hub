@@ -15,37 +15,41 @@ class OnboardingViewBody extends StatefulWidget {
 
 class _OnboardingViewBodyState extends State<OnboardingViewBody> {
   late PageController pageController;
-var currnentPage=0;
-@override
+  var currnentPage = 0;
+  @override
   void initState() {
-    pageController=PageController();
-    pageController.addListener((){
-currnentPage=pageController.page!.round();
-setState(() {
-  
-});
+    pageController = PageController();
+    pageController.addListener(() {
+      currnentPage = pageController.page!.round();
+      setState(() {});
     });
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Expanded(child: CustomOnboaringPageView(pageController: pageController,)),
-        CustomDotsIndicator(currentPage: currnentPage,),
+        Expanded(
+          child: CustomOnboaringPageView(pageController: pageController),
+        ),
+        CustomDotsIndicator(currentPage: currnentPage),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           child: Visibility(
             maintainSize: true,
             maintainAnimation: true,
-            maintainState:true,
-            visible: currnentPage==1,
-            child: CustomOnboardingButton(text: 'ابدأ الان',onPressed: (){
-              SharedPrefrencesSingleTon.setBool(kIsOnboardingViewSeen, true);
-              Navigator.pushReplacementNamed(context, LoginView.routeName);
-            },)),
+            maintainState: true,
+            visible: currnentPage == 1,
+            child: CustomOnboardingButton(
+              text: 'ابدأ الان',
+              onPressed: () {
+                SharedPrefrencesSingleTon.setBool(kIsOnboardingViewSeen, true);
+                Navigator.pushReplacementNamed(context, LoginView.routeName);
+              },
+            ),
+          ),
         ),
-       
       ],
     );
   }

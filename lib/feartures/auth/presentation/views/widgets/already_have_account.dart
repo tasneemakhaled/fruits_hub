@@ -7,14 +7,23 @@ class AlreadyHaveAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('تمتلك حساب بالفعل؟',style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),),
-                TextButton(onPressed: (){
-                  Navigator.pop(context);
-                  // Navigator.pushReplacementNamed(context, LoginView.routeName);
-                }, child: Text('تسجيل الدخول',style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),),),
-              ],
-            );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          'تمتلك حساب بالفعل؟',
+          style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),
+        ),
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+            // Navigator.pushReplacementNamed(context, LoginView.routeName);
+          },
+          child: Text(
+            'تسجيل الدخول',
+            style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),
+          ),
+        ),
+      ],
+    );
   }
 }

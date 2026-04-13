@@ -12,19 +12,21 @@ class BlocConsumerSignupViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
-       if(state is SignUpFailure){
-       buildErrorBar(context, state.message);
-       }
-       if(state is SignUpSuccess){
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('تم التسجيل بنجاح ')));
-       }
+        if (state is SignUpFailure) {
+          buildErrorBar(context, state.message);
+        }
+        if (state is SignUpSuccess) {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text('تم التسجيل بنجاح ')));
+        }
       },
       builder: (context, state) {
         return ModalProgressHUD(
-          inAsyncCall: state is SignUpLoading ?true:false,
-          child: SignUpViewBody());
+          inAsyncCall: state is SignUpLoading ? true : false,
+          child: SignUpViewBody(),
+        );
       },
     );
   }
 }
-  

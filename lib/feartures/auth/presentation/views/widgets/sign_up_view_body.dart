@@ -17,10 +17,10 @@ class SignUpViewBody extends StatefulWidget {
 }
 
 class _SignUpViewBodyState extends State<SignUpViewBody> {
-  GlobalKey<FormState>formKey=GlobalKey<FormState>();
-  AutovalidateMode autovalidateMode=AutovalidateMode.disabled;
-  late bool isTermsAccepted=false;
- late String name,email,password;
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  late bool isTermsAccepted = false;
+  late String name, email, password;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -30,45 +30,62 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
           key: formKey,
           child: Column(
             children: [
-              SizedBox(height: 24,),
+              SizedBox(height: 24),
               CustomTextField(
-                onSaved: (value){
-                  name=value!;
+                onSaved: (value) {
+                  name = value!;
                 },
-                hintText: 'الاسم كامل',keyboardType: TextInputType.name,),
-              SizedBox(height: 10,),
+                hintText: 'الاسم كامل',
+                keyboardType: TextInputType.name,
+              ),
+              SizedBox(height: 10),
               CustomTextField(
-                onSaved: (value){
-                  email=value!;
+                onSaved: (value) {
+                  email = value!;
                 },
-                hintText: 'البريد الإلكتروني',keyboardType: TextInputType.emailAddress,),
-              SizedBox(height: 10,),
-            PasswordField(onSaved: (value){
-              password=value!;
-            },),
-              SizedBox(height: 16,),
-              TermsAndConditionsWidget(onChanged: (value){
-               isTermsAccepted=value;
-               setState(() {
-                 
-               });
-              },),
-              SizedBox(height: 30,),
-              CustomButton(text: 'إنشاء حساب جديد',onPressed: (){
-                if(formKey.currentState!.validate()){
-                  formKey.currentState!.save();
-                  if (isTermsAccepted) {
-  context.read<SignUpCubit>().createUserWithEmailAndPassword(email, password, name);
-}else{
-  buildErrorBar(context, 'يجب عليك الموافقة علي الشروط والاحكام');
-}
-                }else{
-                  autovalidateMode=AutovalidateMode.always;
-                }
-              },),
-              SizedBox(height: 24,),
-             AlreadyHaveAccount(),
-              
+                hintText: 'البريد الإلكتروني',
+                keyboardType: TextInputType.emailAddress,
+              ),
+              SizedBox(height: 10),
+              PasswordField(
+                onSaved: (value) {
+                  password = value!;
+                },
+              ),
+              SizedBox(height: 16),
+              TermsAndConditionsWidget(
+                onChanged: (value) {
+                  isTermsAccepted = value;
+                  setState(() {});
+                },
+              ),
+              SizedBox(height: 30),
+              CustomButton(
+                text: 'إنشاء حساب جديد',
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                    if (isTermsAccepted) {
+                      context
+                          .read<SignUpCubit>()
+                          .createUserWithEmailAndPassword(
+                            email,
+                            password,
+                            name,
+                          );
+                    } else {
+                      buildErrorBar(
+                        context,
+                        'يجب عليك الموافقة علي الشروط والاحكام',
+                      );
+                    }
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                  }
+                },
+              ),
+              SizedBox(height: 24),
+              AlreadyHaveAccount(),
             ],
           ),
         ),
@@ -76,4 +93,3 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
     );
   }
 }
-

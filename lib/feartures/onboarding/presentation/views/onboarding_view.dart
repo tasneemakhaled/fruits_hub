@@ -3,7 +3,7 @@ import 'package:fruits_hub/feartures/onboarding/presentation/views/widgets/onboa
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
-static const routeName="onboarding";
+  static const routeName = "onboarding";
   @override
   Widget build(BuildContext context) {
     return SafeArea(

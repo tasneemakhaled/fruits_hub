@@ -85,5 +85,4 @@ class DefaultFirebaseOptions {
     projectId: 'fruits-hub-ac432',
     storageBucket: 'fruits-hub-ac432.firebasestorage.app',
   );
-
 }

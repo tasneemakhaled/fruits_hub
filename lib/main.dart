@@ -10,40 +10,43 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-void main() async{
-   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await SharedPrefrencesSingleTon.init();
   setUpGetIt();
-  Bloc.observer=CustomBlocObserver();
+  Bloc.observer = CustomBlocObserver();
   runApp(const FruitsHub());
 }
 
 class FruitsHub extends StatelessWidget {
   const FruitsHub({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.darkPrimaryColor),
-        fontFamily: 'Cairo'),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.darkPrimaryColor,
+        ),
+        fontFamily: 'Cairo',
+      ),
       locale: Locale('ar'),
       localizationsDelegates: [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-            ],
-            supportedLocales: S.delegate.supportedLocales,
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
       initialRoute: SplashView.routeName,
-    );}}
+    );
+  }
+}
 
     // flutter launcher icons for app icon
     // on generate routes
