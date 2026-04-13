@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/helper_functions/build_error_bar.dart';
 import 'package:fruits_hub/feartures/auth/presentation/view_models/cubits/LogIn/login_cubit.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/login_view_body.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class BlocConsumerLoginViewBody extends StatelessWidget {
   const BlocConsumerLoginViewBody({super.key});
@@ -10,10 +12,18 @@ class BlocConsumerLoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
-        // TODO: implement listener
+        if (state is LoginFailure) {
+          buildErrorBar(context, state.errMessage);
+        }
+        if (state is LoginSuccess) {
+          buildErrorBar(context, 'تم تسجيل الدخول بنجاح');
+        }
       },
       builder: (context, state) {
-        return LoginViewBody();
+        return ModalProgressHUD(
+          inAsyncCall: state is LoginLoading ? true : false,
+          child: LoginViewBody(),
+        );
       },
     );
   }
