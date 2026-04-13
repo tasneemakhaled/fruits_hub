@@ -31,4 +31,23 @@ class AuthRepoImpl extends AuthRepo {
       throw CustomException(message: e.toString());
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithEmainAndPassword(
+    String email,
+    String password,
+  ) async {
+    try {
+      var user = await firebaseAuthService.signInWithEmainAndPassword(
+        email: email,
+        password: password,
+      );
+      return right(UserModel.fromFirebaseServer(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(errMessage: e.message));
+    } catch (e) {
+      log('Exception in signInWithEmainAndPassword ${e.toString()} ');
+      throw CustomException(message: e.toString());
+    }
+  }
 }
