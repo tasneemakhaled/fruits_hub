@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/services/get_it_service.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
+import 'package:fruits_hub/feartures/auth/domain/repos/auth_repo.dart';
+import 'package:fruits_hub/feartures/auth/presentation/view_models/cubits/LogIn/login_cubit.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/login_view_body.dart';
 
 class LoginView extends StatelessWidget {
@@ -7,19 +11,22 @@ class LoginView extends StatelessWidget {
   static const routeName = 'login';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios),
+    return BlocProvider(
+      create: (context) => LoginCubit(getIt.get<AuthRepo>()),
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.arrow_back_ios),
+          ),
+          title: Text('تسجيل الدخول', style: TextStyles.bold19),
         ),
-        title: Text('تسجيل الدخول', style: TextStyles.bold19),
+        body: LoginViewBody(),
       ),
-      body: LoginViewBody(),
     );
   }
 }
