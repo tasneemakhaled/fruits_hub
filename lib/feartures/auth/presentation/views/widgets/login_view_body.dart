@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constants/app_images.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
+import 'package:fruits_hub/core/widgets/password_field.dart';
 import 'package:fruits_hub/feartures/auth/presentation/view_models/cubits/LogIn/login_cubit.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/social_login_button.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/custom_text_field.dart';
@@ -18,7 +19,7 @@ class LoginViewBody extends StatefulWidget {
 }
 
 class _LoginViewBodyState extends State<LoginViewBody> {
-  GlobalKey<FormState> globalKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> globalKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   late String email, password;
   @override
@@ -27,6 +28,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: SingleChildScrollView(
         child: Form(
+          autovalidateMode: autovalidateMode,
           key: globalKey,
           child: Column(
             children: [
@@ -39,14 +41,12 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 keyboardType: TextInputType.emailAddress,
               ),
               SizedBox(height: 10),
-              CustomTextField(
+              PasswordField(
                 onSaved: (value) {
                   password = value!;
                 },
-                keyboardType: TextInputType.visiblePassword,
-                hintText: 'كلمة المرور',
-                suffixIcon: Icon(Icons.visibility, color: Color(0xff949D9E)),
               ),
+
               SizedBox(height: 8),
               Align(
                 alignment: Alignment.centerLeft,
@@ -69,6 +69,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     );
                   } else {
                     autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
                   }
                 },
               ),
