@@ -7,19 +7,17 @@ class SplashViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [SvgPicture.asset(Assets.assetsImagesPlant)],
-          ),
-          SvgPicture.asset(Assets.assetsImagesLogo),
-          SvgPicture.asset(Assets.assetsImagesCircles, fit: BoxFit.fill),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      // crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [SvgPicture.asset(Assets.assetsImagesPlant)],
+        ),
+        SvgPicture.asset(Assets.assetsImagesLogo),
+        SvgPicture.asset(Assets.assetsImagesCircles, fit: BoxFit.fill),
+      ],
     );
   }
 }
