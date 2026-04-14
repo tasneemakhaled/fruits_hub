@@ -13,6 +13,6 @@ abstract class AuthRepo {
     String password,
   );
   Future<Either<Failure, UserEntity>> signInWithGoogle();
-  // Future<Either<Failure, UserEntity>> signInWithFacebook();
+  Future<Either<Failure, UserEntity>> signInWithFacebook();
   Future<Either<Failure, UserEntity>> signInWithApple();
 }
