@@ -20,4 +20,43 @@ class LoginCubit extends Cubit<LoginState> {
       },
     );
   }
+
+  Future<void> signInWithGoogle() async {
+    emit(LoginLoading());
+    var result = await authRepo.signInWithGoogle();
+    result.fold(
+      (failure) {
+        emit(LoginFailure(errMessage: failure.errMessage));
+      },
+      (userEntity) {
+        emit(LoginSuccess(userEntity: userEntity));
+      },
+    );
+  }
+
+  Future<void> signInWithFacebook() async {
+    emit(LoginLoading());
+    var result = await authRepo.signInWithGoogle();
+    result.fold(
+      (failure) {
+        emit(LoginFailure(errMessage: failure.errMessage));
+      },
+      (userEntity) {
+        emit(LoginSuccess(userEntity: userEntity));
+      },
+    );
+  }
+
+  Future<void> signInWithApple() async {
+    emit(LoginLoading());
+    var result = await authRepo.signInWithApple();
+    result.fold(
+      (failure) {
+        emit(LoginFailure(errMessage: failure.errMessage));
+      },
+      (userEntity) {
+        emit(LoginSuccess(userEntity: userEntity));
+      },
+    );
+  }
 }

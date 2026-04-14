@@ -46,7 +46,46 @@ class AuthRepoImpl extends AuthRepo {
     } on CustomException catch (e) {
       return left(ServerFailure(errMessage: e.message));
     } catch (e) {
-      log('Exception in signInWithEmainAndPassword ${e.toString()} ');
+      log('Exception in signInWithEmailAndPassword ${e.toString()} ');
+      throw CustomException(message: e.toString());
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithApple() async {
+    try {
+      var user = await firebaseAuthService.signInWithApple();
+      return right(UserModel.fromFirebaseServer(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(errMessage: e.message));
+    } catch (e) {
+      log('Exception in signInWithApple ${e.toString()} ');
+      throw CustomException(message: e.toString());
+    }
+  }
+
+  // @override
+  // Future<Either<Failure, UserEntity>> signInWithFacebook() async {
+  //   // try {
+  //   //   var user = await firebaseAuthService.signInWithFacebook();
+  //   //   return right(UserModel.fromFirebaseServer(user));
+  //   // } on CustomException catch (e) {
+  //   //   return left(ServerFailure(errMessage: e.message));
+  //   // } catch (e) {
+  //   //   log('Exception in signInWithEmainAndPassword ${e.toString()} ');
+  //   //   throw CustomException(message: e.toString());
+  //   // }
+  // }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    try {
+      var user = await firebaseAuthService.signInWithGoogle();
+      return right(UserModel.fromFirebaseServer(user));
+    } on CustomException catch (e) {
+      return left(ServerFailure(errMessage: e.message));
+    } catch (e) {
+      log('Exception in signInWithGoogle ${e.toString()} ');
       throw CustomException(message: e.toString());
     }
   }
