@@ -5,7 +5,6 @@ import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/feartures/auth/domain/repos/auth_repo.dart';
 import 'package:fruits_hub/feartures/auth/presentation/view_models/cubits/LogIn/login_cubit.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/bloc_consumer_login_view_body.dart';
-import 'package:fruits_hub/feartures/auth/presentation/views/widgets/login_view_body.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
