@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -86,14 +87,22 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 title: Text('تسجيل بواسطة جوجل'),
               ),
               SizedBox(height: 10),
-              SocailLoginButton(
-                onTap: () {
-                  context.read<LoginCubit>().signInWithApple();
-                },
-                leading: SvgPicture.asset(Assets.assetsImagesAppleIcon),
-                title: Text('تسجيل بواسطة أبل'),
-              ),
-              SizedBox(height: 10),
+              Platform.isIOS
+                  ? Column(
+                      children: [
+                        SocailLoginButton(
+                          onTap: () {
+                            context.read<LoginCubit>().signInWithApple();
+                          },
+                          leading: SvgPicture.asset(
+                            Assets.assetsImagesAppleIcon,
+                          ),
+                          title: Text('تسجيل بواسطة أبل'),
+                        ),
+                        SizedBox(height: 10),
+                      ],
+                    )
+                  : SizedBox(),
               SocailLoginButton(
                 onTap: () {
                   context.read<LoginCubit>().signInWithFacebook();
