@@ -89,4 +89,10 @@ class AuthRepoImpl extends AuthRepo {
       throw CustomException(message: e.toString());
     }
   }
+
+  @override
+  Future<dynamic> addData({required UserEntity user}) {
+    // TODO: implement addUserData
+    throw UnimplementedError();
+  }
 }
