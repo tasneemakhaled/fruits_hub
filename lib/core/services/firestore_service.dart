@@ -9,8 +9,13 @@ class FireStoreService implements DataBaseService {
   Future<void> addData({
     required String path,
     required Map<String, dynamic> data,
+    String? documentId,
   }) async {
-    await firestore.collection(path).add(data);
+    if (documentId != null) {
+      await firestore.collection(path).doc(documentId).set(data);
+    } else {
+      await firestore.collection(path).add(data);
+    }
   }
 
   @override
@@ -18,7 +23,12 @@ class FireStoreService implements DataBaseService {
     required String path,
     required String documentId,
   }) async {
-    var data = await firestore.collection(path).doc(documentId).get();
-    return data.data() as Map<String, dynamic>;
+    var doc = await firestore.collection(path).doc(documentId).get();
+
+    if (!doc.exists || doc.data() == null) {
+      throw Exception('Document not found at $path/$documentId');
+    }
+
+    return doc.data()!; // ✅
   }
 }

@@ -31,7 +31,7 @@ class AuthRepoImpl extends AuthRepo {
         email: email,
         password: password,
       );
-      var userEntity = UserEntity(name: name, email: email, userId: user.uid);
+      var userEntity = UserEntity(name: name, email: email, uid: user.uid);
       await addUserData(user: userEntity);
       return right(userEntity);
     } on CustomException catch (e) {
@@ -54,16 +54,17 @@ class AuthRepoImpl extends AuthRepo {
     String password,
   ) async {
     try {
-      var user = await firebaseAuthService.signInWithEmainAndPassword(
+      var user = await firebaseAuthService.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
-      return right(UserModel.fromFirebaseServer(user));
+      var userEntity = await getUserData(uid: user.uid);
+      return right(userEntity);
     } on CustomException catch (e) {
       return left(ServerFailure(errMessage: e.message));
     } catch (e) {
-      log('Exception in signInWithEmailAndPassword ${e.toString()} ');
-      throw CustomException(message: e.toString());
+      log('Exception in signInWithEmailAndPassword ${e.toString()}');
+      return left(ServerFailure(errMessage: e.toString())); // ✅ بدل throw
     }
   }
 
@@ -138,6 +139,16 @@ class AuthRepoImpl extends AuthRepo {
     await dataBaseService.addData(
       path: BackendEndpoints.addUserData,
       data: user.toMap(),
+      documentId: user.uid,
     );
+  }
+
+  @override
+  Future<UserEntity> getUserData({required String uid}) async {
+    var data = await dataBaseService.getData(
+      path: BackendEndpoints.getUserData,
+      documentId: uid,
+    );
+    return UserModel.fromJson(data);
   }
 }

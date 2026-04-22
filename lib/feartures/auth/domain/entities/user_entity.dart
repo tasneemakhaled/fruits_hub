@@ -2,9 +2,9 @@ class UserEntity {
   final String name;
   final String email;
   // final String password;
-  final String userId;
-  UserEntity({required this.name, required this.email, required this.userId});
+  final String uid;
+  UserEntity({required this.name, required this.email, required this.uid});
   toMap() {
-    return {'name': name, 'email': email, 'uId': userId};
+    return {'name': name, 'email': email, 'uId': uid};
   }
 }
