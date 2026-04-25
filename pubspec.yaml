@@ -102,5 +102,6 @@ flutter_assets:
   assets_path: assets/images/
   output_path: lib/core/utils/constants/
   filename: app_images.dart
+  class_name: AppImages
 flutter_intl:
   enabled: true

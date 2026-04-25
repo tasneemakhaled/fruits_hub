@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
-import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:fruits_hub/core/utils/constants/app_images.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/core/widgets/password_field.dart';
 import 'package:fruits_hub/feartures/auth/presentation/view_models/cubits/LogIn/login_cubit.dart';
@@ -83,7 +83,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 onTap: () {
                   context.read<LoginCubit>().signInWithGoogle();
                 },
-                leading: SvgPicture.asset(Assets.assetsImagesGoogleIcon),
+                leading: SvgPicture.asset(AppImages.assetsImagesGoogleIcon),
                 title: Text('تسجيل بواسطة جوجل'),
               ),
               SizedBox(height: 10),
@@ -95,7 +95,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                             context.read<LoginCubit>().signInWithApple();
                           },
                           leading: SvgPicture.asset(
-                            Assets.assetsImagesAppleIcon,
+                            AppImages.assetsImagesAppleIcon,
                           ),
                           title: Text('تسجيل بواسطة أبل'),
                         ),
@@ -107,7 +107,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 onTap: () {
                   context.read<LoginCubit>().signInWithFacebook();
                 },
-                leading: SvgPicture.asset(Assets.assetsImagesFacebookIcon),
+                leading: SvgPicture.asset(AppImages.assetsImagesFacebookIcon),
                 title: Text('تسجيل بواسطة فيسبوك'),
               ),
             ],

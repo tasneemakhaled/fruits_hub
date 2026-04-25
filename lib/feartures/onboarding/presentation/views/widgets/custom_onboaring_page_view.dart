@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
-import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:fruits_hub/core/utils/constants/app_images.dart';
 import 'package:fruits_hub/feartures/onboarding/presentation/views/widgets/page_view_item.dart';
 
 class CustomOnboaringPageView extends StatelessWidget {
@@ -14,8 +14,8 @@ class CustomOnboaringPageView extends StatelessWidget {
       children: [
         PageViewItem(
           isVisible: true,
-          backgroundImage: Assets.assetsImagesVector1,
-          onBoardingImage: Assets.assetsImagesOnboarding1,
+          backgroundImage: AppImages.assetsImagesVector1,
+          onBoardingImage: AppImages.assetsImagesOnboarding1,
           subTitle:
               'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
           title: Row(
@@ -39,8 +39,8 @@ class CustomOnboaringPageView extends StatelessWidget {
         ),
         PageViewItem(
           isVisible: false,
-          backgroundImage: Assets.assetsImagesVector2,
-          onBoardingImage: Assets.assetsImagesOnboarding2,
+          backgroundImage: AppImages.assetsImagesVector2,
+          onBoardingImage: AppImages.assetsImagesOnboarding2,
           subTitle:
               'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
           title: Text('ابحث وتسوق', style: TextStyles.bold23),
