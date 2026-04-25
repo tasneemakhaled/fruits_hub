@@ -48,6 +48,11 @@ class AppImages {
   /// assets/images/plant.svg
   static const String assetsImagesPlant = "assets/images/plant.svg";
 
+  /// Assets for assetsImagesProfileImage
+  /// assets/images/profile_image.png
+  static const String assetsImagesProfileImage =
+      "assets/images/profile_image.png";
+
   /// Assets for assetsImagesVector1
   /// assets/images/Vector1.svg
   static const String assetsImagesVector1 = "assets/images/Vector1.svg";
