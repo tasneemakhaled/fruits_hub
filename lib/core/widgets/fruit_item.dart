@@ -9,8 +9,6 @@ class FruitItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 214,
-      width: 168,
       padding: EdgeInsets.symmetric(horizontal: 8),
       decoration: BoxDecoration(color: Color(0xfff3f5f7)),
       child: Stack(
@@ -21,6 +19,7 @@ class FruitItem extends StatelessWidget {
               children: [
                 SizedBox(height: 20),
                 Image.asset(AppImages.assetsImagesWatermelon),
+                SizedBox(height: 20),
                 ListTile(
                   trailing: CircleAvatar(
                     backgroundColor: AppColors.darkPrimaryColor,
