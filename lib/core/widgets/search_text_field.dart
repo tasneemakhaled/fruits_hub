@@ -11,30 +11,31 @@ class SearchTextField extends StatelessWidget {
     return SizedBox(
       height: 40,
       child: TextFormField(
+        keyboardType: TextInputType.text,
         decoration: InputDecoration(
           fillColor: Colors.white,
           filled: true,
           suffixIcon: SizedBox(
             width: 20,
-            height: 20,
+            // height: 20,
             child: Center(
               child: SvgPicture.asset(
-                fit: BoxFit.contain,
+                // fit: BoxFit.contain,
                 AppImages.assetsImagesFilterIcon,
-                height: 20,
-                width: 20,
+                // height: 20,
+                // width: 20,
               ),
             ),
           ),
           prefixIcon: SizedBox(
             width: 20,
-            height: 20,
+            // height: 20,
             child: Center(
               child: SvgPicture.asset(
                 AppImages.assetsImagesSearchIcon,
-                height: 20,
-                width: 20,
-                fit: BoxFit.contain,
+                // height: 20,
+                // width: 20,
+                // fit: BoxFit.contain,
               ),
             ),
           ),
