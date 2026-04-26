@@ -61,6 +61,10 @@ class AppImages {
   /// assets/images/search_icon.svg
   static const String assetsImagesSearchIcon = "assets/images/search_icon.svg";
 
+  /// Assets for assetsImagesShape
+  /// assets/images/shape.png
+  static const String assetsImagesShape = "assets/images/shape.svg";
+
   /// Assets for assetsImagesVector1
   /// assets/images/Vector1.svg
   static const String assetsImagesVector1 = "assets/images/Vector1.svg";
@@ -68,4 +72,8 @@ class AppImages {
   /// Assets for assetsImagesVector2
   /// assets/images/Vector2.svg
   static const String assetsImagesVector2 = "assets/images/Vector2.svg";
+
+  /// Assets for assetsImagesWatermelon
+  /// assets/images/watermelon.png
+  static const String assetsImagesWatermelon = "assets/images/watermelon.png";
 }
