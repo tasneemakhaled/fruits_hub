@@ -1,8 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/utils/constants/app_images.dart';
+import 'package:fruits_hub/feartures/home/domain/entites/bottom_navigation_bar_entity.dart';
+import 'package:fruits_hub/feartures/home/presentation/views/widgets/nav_bar_item.dart';
 
-class CustomBottomNavBar extends StatelessWidget {
+class CustomBottomNavBar extends StatefulWidget {
   const CustomBottomNavBar({super.key});
 
+  @override
+  State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
+}
+
+class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
+  int selectedIndex = 0;
+  List<BottomNavigationBarEntity> nav_items = [
+    BottomNavigationBarEntity(
+      inActiveIcon: AppImages.assetsImagesInactiveHome,
+      activeIcon: AppImages.assetsImagesActiveHome,
+      label: 'الرئيسية',
+    ),
+    BottomNavigationBarEntity(
+      inActiveIcon: AppImages.assetsImagesInactiveProducts,
+      activeIcon: AppImages.assetsImagesActiveProducts,
+      label: 'المنتجات',
+    ),
+    BottomNavigationBarEntity(
+      inActiveIcon: AppImages.assetsImagesInactiveShoppingCart,
+      activeIcon: AppImages.assetsImagesActiveShoppingCart,
+      label: 'سلة التسوق',
+    ),
+    BottomNavigationBarEntity(
+      inActiveIcon: AppImages.assetsImagesInactiveUser,
+      activeIcon: AppImages.assetsImagesActiveUser,
+      label: 'حسابي',
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,6 +56,21 @@ class CustomBottomNavBar extends StatelessWidget {
             topRight: Radius.circular(30),
           ),
         ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: List.generate(nav_items.length, (index) {
+          return GestureDetector(
+            onTap: () {
+              selectedIndex = index;
+              setState(() {});
+            },
+            child: NavBarItem(
+              isSelected: selectedIndex == index,
+              bottomNavigationBarEntity: nav_items[index],
+            ),
+          );
+        }),
       ),
     );
   }
