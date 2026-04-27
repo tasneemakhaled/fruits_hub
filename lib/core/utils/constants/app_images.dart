@@ -2,6 +2,24 @@
 class AppImages {
   AppImages._();
 
+  /// Assets for assetsImagesActiveHome
+  /// assets/images/active_home.svg
+  static const String assetsImagesActiveHome = "assets/images/active_home.svg";
+
+  /// Assets for assetsImagesActiveProducts
+  /// assets/images/active_products.svg
+  static const String assetsImagesActiveProducts =
+      "assets/images/active_products.svg";
+
+  /// Assets for assetsImagesActiveShoppingCart
+  /// assets/images/active_shopping-cart.svg
+  static const String assetsImagesActiveShoppingCart =
+      "assets/images/active_shopping-cart.svg";
+
+  /// Assets for assetsImagesActiveUser
+  /// assets/images/active_user.svg
+  static const String assetsImagesActiveUser = "assets/images/active_user.svg";
+
   /// Assets for assetsImagesAppIcon
   /// assets/images/app_icon.png
   static const String assetsImagesAppIcon = "assets/images/app_icon.png";
@@ -30,6 +48,26 @@ class AppImages {
   /// Assets for assetsImagesGoogleIcon
   /// assets/images/google_icon.svg
   static const String assetsImagesGoogleIcon = "assets/images/google_icon.svg";
+
+  /// Assets for assetsImagesInactiveHome
+  /// assets/images/inactive_home.svg
+  static const String assetsImagesInactiveHome =
+      "assets/images/inactive_home.svg";
+
+  /// Assets for assetsImagesInactiveProducts
+  /// assets/images/inactive_products.svg
+  static const String assetsImagesInactiveProducts =
+      "assets/images/inactive_products.svg";
+
+  /// Assets for assetsImagesInactiveShoppingCart
+  /// assets/images/inactive_shopping-cart .svg
+  static const String assetsImagesInactiveShoppingCart =
+      "assets/images/inactive_shopping-cart .svg";
+
+  /// Assets for assetsImagesInactiveUser
+  /// assets/images/inactive_user.svg
+  static const String assetsImagesInactiveUser =
+      "assets/images/inactive_user.svg";
 
   /// Assets for assetsImagesLogo
   /// assets/images/logo.svg
@@ -63,7 +101,7 @@ class AppImages {
 
   /// Assets for assetsImagesShape
   /// assets/images/shape.png
-  static const String assetsImagesShape = "assets/images/shape.svg";
+  static const String assetsImagesShape = "assets/images/shape.png";
 
   /// Assets for assetsImagesVector1
   /// assets/images/Vector1.svg
