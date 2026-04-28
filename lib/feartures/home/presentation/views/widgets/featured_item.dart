@@ -18,6 +18,61 @@ class FeaturedItem extends StatelessWidget {
           aspectRatio: 342 / 158,
           child: Stack(
             children: [
+              // 1️⃣ Green shape FIRST (renders at the back)
+              Positioned(
+                top: 0,
+                right: 0,
+                bottom: 0,
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 2,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: svg.Svg(AppImages.assetsImagesShape),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 33.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 25),
+                        Text(
+                          'عروض العيد',
+                          style: TextStyles.regular13.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                        Spacer(),
+                        Text(
+                          'خصم 25%',
+                          style: TextStyles.bold19.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadiusGeometry.circular(8),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            'تسوق الأن',
+                            style: TextStyles.bold13.copyWith(
+                              color: AppColors.darkPrimaryColor,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+              // 2️⃣ Fruit image SECOND (renders on top)
               Positioned(
                 top: 0,
                 left: 0,
@@ -26,51 +81,6 @@ class FeaturedItem extends StatelessWidget {
                 child: SvgPicture.asset(
                   AppImages.assetsImagesOnboarding2,
                   fit: BoxFit.fill,
-                ),
-              ),
-
-              Container(
-                width: MediaQuery.of(context).size.width / 2,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: svg.Svg(AppImages.assetsImagesShape),
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 33.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 25),
-                      Text(
-                        'عروص العيد',
-                        style: TextStyles.regular13.copyWith(
-                          color: Colors.white,
-                        ),
-                      ),
-                      Spacer(),
-                      Text(
-                        'خصم 25%',
-                        style: TextStyles.bold19.copyWith(color: Colors.white),
-                      ),
-                      SizedBox(height: 10),
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusGeometry.circular(8),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: Text(
-                          'تسوق الأن',
-                          style: TextStyles.bold13.copyWith(
-                            color: AppColors.darkPrimaryColor,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20),
-                    ],
-                  ),
                 ),
               ),
             ],

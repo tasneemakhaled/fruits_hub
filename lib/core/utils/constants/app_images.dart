@@ -101,7 +101,7 @@ class AppImages {
 
   /// Assets for assetsImagesShape
   /// assets/images/shape.png
-  static const String assetsImagesShape = "assets/images/shape.png";
+  static const String assetsImagesShape = "assets/images/shape.svg";
 
   /// Assets for assetsImagesVector1
   /// assets/images/Vector1.svg
