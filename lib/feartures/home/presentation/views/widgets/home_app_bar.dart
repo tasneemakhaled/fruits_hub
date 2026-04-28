@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fruits_hub/core/helper_functions/get_user.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constants/app_images.dart';
@@ -24,7 +25,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 'صباح الخير!..',
                 style: TextStyles.regular16.copyWith(color: Color(0xff949D9E)),
               ),
-              Text('تسنيم خالد', style: TextStyles.bold16),
+              Text(getUser().name, style: TextStyles.bold16),
             ],
           ),
         ],

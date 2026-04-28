@@ -80,7 +80,7 @@ class FeaturedItem extends StatelessWidget {
                 right: MediaQuery.of(context).size.width / 3.5,
                 child: SvgPicture.asset(
                   AppImages.assetsImagesOnboarding2,
-                  fit: BoxFit.fill,
+                  // fit: BoxFit.fill,
                 ),
               ),
             ],
