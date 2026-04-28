@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/widgets/fruit_item.dart';
 
-class FruitSellingGridView extends StatelessWidget {
-  const FruitSellingGridView({super.key});
+class FruitsSellingGridView extends StatelessWidget {
+  const FruitsSellingGridView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SliverGrid.builder(
+    return GridView.builder(
+      shrinkWrap: true,
+
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         childAspectRatio: 163 / 214, // width/height
         crossAxisCount: 2,
