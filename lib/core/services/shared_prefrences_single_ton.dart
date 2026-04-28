@@ -18,7 +18,7 @@ class SharedPrefrencesSingleTon {
     await _instance.setString(key, value);
   }
 
-  static getString(String key) async {
-    return _instance.getString(key);
+  static getString(String key) {
+    return _instance.getString(key) ?? '';
   }
 }
