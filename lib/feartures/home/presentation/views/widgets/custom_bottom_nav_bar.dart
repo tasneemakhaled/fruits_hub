@@ -38,7 +38,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   Widget build(BuildContext context) {
     return Container(
       width: 375,
-      height: 70,
+      height: 60,
       decoration: ShapeDecoration(
         shadows: [
           BoxShadow(

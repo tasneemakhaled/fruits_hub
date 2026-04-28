@@ -13,7 +13,7 @@ class ActiveItemNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+      padding: EdgeInsets.symmetric(horizontal: 2),
       decoration: BoxDecoration(
         color: Color(0xffeeeeee),
         borderRadius: BorderRadius.circular(30),
@@ -21,7 +21,7 @@ class ActiveItemNavBar extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
-            radius: 16,
+            radius: 14,
             backgroundColor: AppColors.darkPrimaryColor,
             child: SvgPicture.asset(activeIcon),
           ),
