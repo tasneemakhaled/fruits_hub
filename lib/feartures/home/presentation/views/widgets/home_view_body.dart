@@ -5,7 +5,8 @@ import 'package:fruits_hub/feartures/home/presentation/views/widgets/custom_home
 import 'package:fruits_hub/feartures/home/presentation/views/widgets/best_selling_header.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
 import 'package:fruits_hub/feartures/home/presentation/views/widgets/featured_list_view.dart';
-import 'package:fruits_hub/feartures/home/presentation/views/widgets/fruit_selling_sliver_view.dart';
+import 'package:fruits_hub/feartures/home/presentation/views/widgets/fruit_selling_sliver_grid.dart';
+import 'package:fruits_hub/feartures/home/presentation/views/widgets/fruit_selling_sliver_grid_bloc_builder.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -17,6 +18,7 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   void initState() {
+    super.initState();
     context.read<ProductsCubit>().getBestSellingProducts();
   }
 
@@ -42,7 +44,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 ],
               ),
             ),
-            FruitSellingSliverGrid(),
+            FruitSellingSliverGridBlocBuilder(),
           ],
         ),
       ),

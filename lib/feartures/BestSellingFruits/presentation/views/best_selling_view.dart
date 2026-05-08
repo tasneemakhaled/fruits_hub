@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constants/app_images.dart';
 import 'package:fruits_hub/feartures/BestSellingFruits/presentation/views/widgets/fruits_selling_grid_view.dart';
-import 'package:fruits_hub/feartures/home/presentation/views/widgets/fruit_selling_sliver_view.dart';
+import 'package:fruits_hub/feartures/home/presentation/views/widgets/fruit_selling_sliver_grid.dart';
 
 class BestSellingView extends StatelessWidget {
   const BestSellingView({super.key});

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/entities/products_entity.dart';
 import 'package:fruits_hub/core/widgets/fruit_item.dart';
 
 class FruitSellingSliverGrid extends StatelessWidget {
-  const FruitSellingSliverGrid({super.key});
-
+  const FruitSellingSliverGrid({super.key, required this.products});
+  final List<ProductsEntity> products;
   @override
   Widget build(BuildContext context) {
     return SliverGrid.builder(
