@@ -4,7 +4,7 @@ import 'package:fruits_hub/core/helper_functions/build_error_bar.dart';
 import 'package:fruits_hub/feartures/auth/presentation/view_models/cubits/SignUp/sign_up_cubit.dart';
 import 'package:fruits_hub/core/widgets/custom_prgress_hud.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/widgets/sign_up_view_body.dart';
-import 'package:fruits_hub/feartures/home/presentation/views/home_view.dart';
+import 'package:fruits_hub/feartures/home/presentation/views/main_view.dart';
 
 class BlocConsumerSignupViewBody extends StatelessWidget {
   const BlocConsumerSignupViewBody({super.key});

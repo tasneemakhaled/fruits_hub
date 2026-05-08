@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/feartures/home/presentation/views/widgets/custom_bottom_nav_bar.dart';
-import 'package:fruits_hub/feartures/home/presentation/views/widgets/home_view_body.dart';
+import 'package:fruits_hub/feartures/home/presentation/views/home_view.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});
@@ -9,7 +9,7 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CustomBottomNavBar(),
-      body: HomeViewBody(),
+      body: HomeView(),
     );
   }
 }

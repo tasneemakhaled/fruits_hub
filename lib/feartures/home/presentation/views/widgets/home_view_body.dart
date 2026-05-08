@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:fruits_hub/feartures/home/presentation/views/widgets/best_selling_header.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/cubits/cubit/products_cubit.dart';
 import 'package:fruits_hub/feartures/home/presentation/views/widgets/custom_home_app_bar.dart';
+import 'package:fruits_hub/feartures/home/presentation/views/widgets/best_selling_header.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
 import 'package:fruits_hub/feartures/home/presentation/views/widgets/featured_list_view.dart';
-import 'package:fruits_hub/core/widgets/fruit_item.dart';
 import 'package:fruits_hub/feartures/home/presentation/views/widgets/fruit_selling_sliver_view.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
+
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+  @override
+  void initState() {
+    context.read<ProductsCubit>().getBestSellingProducts();
+  }
 
   @override
   Widget build(BuildContext context) {

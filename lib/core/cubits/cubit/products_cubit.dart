@@ -20,4 +20,17 @@ class ProductsCubit extends Cubit<ProductsState> {
       },
     );
   }
+
+  Future<void> getBestSellingProducts() async {
+    emit(ProductsLoading());
+    var products = await productsRepo.getBestSellingProducts();
+    products.fold(
+      (failue) {
+        emit(ProductsFailure(errorMessage: failue.errMessage));
+      },
+      (products) {
+        emit(ProductsSuccess(products: products));
+      },
+    );
+  }
 }
