@@ -1,3 +1,4 @@
+import 'package:fruits_hub/core/entities/products_entity.dart';
 import 'package:fruits_hub/core/entities/review_entity.dart';
 
 class ReviewModel {
@@ -32,6 +33,16 @@ class ReviewModel {
       reviewDescription: json['reviewDescription'],
     );
   }
+  ReviewEntity toEntity() {
+    return ReviewEntity(
+      name: name,
+      image: image,
+      rating: rating,
+      date: date,
+      reviewDescription: reviewDescription,
+    );
+  }
+
   toJson() {
     return {
       'name': name,
