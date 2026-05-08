@@ -1,4 +1,3 @@
-import 'package:fruits_hub/core/entities/products_entity.dart';
 import 'package:fruits_hub/core/entities/review_entity.dart';
 
 class ReviewModel {

@@ -1,0 +1,23 @@
+import 'package:bloc/bloc.dart';
+import 'package:fruits_hub/core/entities/products_entity.dart';
+import 'package:fruits_hub/core/repos/products_repo.dart';
+import 'package:meta/meta.dart';
+
+part 'products_state.dart';
+
+class ProductsCubit extends Cubit<ProductsState> {
+  ProductsCubit(this.productsRepo) : super(ProductsInitial());
+  final ProductsRepo productsRepo;
+  Future<void> getProducts() async {
+    emit(ProductsLoading());
+    var products = await productsRepo.getProducts();
+    products.fold(
+      (failue) {
+        emit(ProductsFailure(errorMessage: failue.errMessage));
+      },
+      (products) {
+        emit(ProductsSuccess(products: products));
+      },
+    );
+  }
+}
