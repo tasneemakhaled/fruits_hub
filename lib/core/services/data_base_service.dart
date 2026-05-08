@@ -8,6 +8,7 @@ abstract class DataBaseService {
     // read data
     required String path,
     String? documentId,
+    Map<String, dynamic>? query,
   });
   Future<bool> checkIfDataExists({
     required String path,
