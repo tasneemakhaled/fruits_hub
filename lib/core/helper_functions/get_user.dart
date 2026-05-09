@@ -7,6 +7,12 @@ import 'package:fruits_hub/feartures/auth/domain/entities/user_entity.dart';
 
 UserEntity getUser() {
   var jsonString = SharedPrefrencesSingleTon.getString(kUserData);
+
+  // ✅ تأكد إن الـ string مش فاضي
+  if (jsonString == null || jsonString.isEmpty) {
+    return UserEntity(name: '', email: '', uid: ''); // أو default values عندك
+  }
+
   var userEntity = UserModel.fromJson(jsonDecode(jsonString));
   return userEntity;
 }
