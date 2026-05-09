@@ -7,7 +7,7 @@ final dummyProduct = ProductsEntity(
   description: 'Dummy',
   code: 'DUMMY-000',
   price: 0.0,
-  image: File(''),
+  // image: File(''),
   isOrganic: false,
   isFeatured: false,
   expirationMonths: 0,

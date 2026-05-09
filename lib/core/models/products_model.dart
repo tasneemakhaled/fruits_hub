@@ -8,7 +8,7 @@ class ProductsModel {
   final String description;
   final String code;
   final num price;
-  final File image;
+  // final File image;
   String? imageUrl;
   final bool isFeatured;
   final int expirationMonths;
@@ -25,7 +25,7 @@ class ProductsModel {
     required this.description,
     required this.code,
     required this.price,
-    required this.image,
+    // required this.image,
     this.imageUrl,
     required this.isFeatured,
     required this.expirationMonths,
@@ -54,11 +54,12 @@ class ProductsModel {
   // }
   ProductsEntity toEntity() {
     return ProductsEntity(
+      imageUrl: imageUrl,
       name: name,
       description: description,
       code: code,
       price: price,
-      image: image,
+      // image: image,
       isOrganic: isOrganic,
       isFeatured: isFeatured,
       expirationMonths: expirationMonths,
@@ -70,12 +71,13 @@ class ProductsModel {
 
   factory ProductsModel.fromJson(json) {
     return ProductsModel(
+      imageUrl: json['imageUrl'],
       sellingCount: json['sellingCount'],
       name: json['name'],
       description: json['description'],
       code: json['code'],
       price: json['price'],
-      image: json['image'],
+      // image: File(''),
       isFeatured: json['isFeatured'],
       expirationMonths: json['expirationMonths'],
       numOfCalories: json['numOfCalories'],
@@ -103,7 +105,7 @@ class ProductsModel {
       'unitAmount': unitAmount,
       'isOrganic': isOrganic,
       'reviews': reviews.map((e) => e.toJson()).toList(),
-      'selling count': sellingCount,
+      'sellingCount': sellingCount,
     };
   }
 }

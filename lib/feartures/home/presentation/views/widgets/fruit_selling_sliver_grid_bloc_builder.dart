@@ -16,8 +16,8 @@ class FruitSellingSliverGridBlocBuilder extends StatelessWidget {
         if (state is ProductsSuccess) {
           return FruitSellingSliverGrid(products: state.products);
         } else if (state is ProductsFailure) {
-          buildErrorBar(context, state.errorMessage);
-          return const SizedBox.shrink();
+          // buildErrorBar(context, state.errorMessage);
+          return SliverToBoxAdapter(child: const SizedBox.shrink());
         } else {
           return Skeletonizer.sliver(
             child: FruitSellingSliverGrid(products: dummyProducts),

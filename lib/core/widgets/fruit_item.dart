@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/entities/products_entity.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constants/app_images.dart';
 
 class FruitItem extends StatelessWidget {
-  const FruitItem({super.key});
-
+  const FruitItem({super.key, required this.productsEntity});
+  final ProductsEntity productsEntity;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,25 +19,30 @@ class FruitItem extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: 20),
-                Image.asset(AppImages.assetsImagesWatermelon),
+                Flexible(child: Image.network(productsEntity.imageUrl!)),
                 SizedBox(height: 20),
                 ListTile(
                   trailing: CircleAvatar(
                     backgroundColor: AppColors.darkPrimaryColor,
                     child: Icon(Icons.add, color: Colors.white),
                   ),
-                  title: Text('بطيخ', style: TextStyles.semiBold13),
+                  title: FittedBox(
+                    child: Text(
+                      productsEntity.name,
+                      style: TextStyles.semiBold13,
+                    ),
+                  ),
                   subtitle: Text.rich(
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: '20جنية',
+                          text: productsEntity.price.toString(),
                           style: TextStyles.bold13.copyWith(
                             color: Color(0xfff3bf60),
                           ),
                         ),
                         TextSpan(
-                          text: '/الكيلو',
+                          text: 'جنيه/الكيلو',
                           style: TextStyles.bold13.copyWith(
                             color: Color(0xfff5d69c),
                           ),

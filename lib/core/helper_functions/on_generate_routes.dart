@@ -18,8 +18,8 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
       return MaterialPageRoute(builder: (context) => SignUpView());
     case MainView.routeName:
       return MaterialPageRoute(builder: (context) => MainView());
-    case BestSellingView.routeName:
-      return MaterialPageRoute(builder: (context) => BestSellingView());
+    // case BestSellingView.routeName:
+    //   return MaterialPageRoute(builder: (context) => BestSellingView());
     default:
       return MaterialPageRoute(builder: (context) => Scaffold());
   }
