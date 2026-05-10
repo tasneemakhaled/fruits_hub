@@ -67,7 +67,9 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         children: List.generate(navItems.length, (index) {
           return GestureDetector(
             onTap: () {
+              selectedIndex = index;
               widget.onItemSelected(index);
+              setState(() {});
             },
             child: NavBarItem(
               isSelected: selectedIndex == index,

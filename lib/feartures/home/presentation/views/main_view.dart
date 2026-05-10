@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/helper_functions/get_current_view.dart';
 import 'package:fruits_hub/feartures/home/presentation/views/widgets/custom_bottom_nav_bar.dart';
-import 'package:fruits_hub/feartures/home/presentation/views/home_view.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});
