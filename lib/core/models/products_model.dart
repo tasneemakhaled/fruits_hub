@@ -72,16 +72,16 @@ class ProductsModel {
   factory ProductsModel.fromJson(json) {
     return ProductsModel(
       imageUrl: json['imageUrl'],
-      sellingCount: json['sellingCount'],
-      name: json['name'],
-      description: json['description'],
-      code: json['code'],
-      price: json['price'],
+      sellingCount: json['sellingCount'] ?? 0,
+      name: json['name'] ?? '',
+      description: json['description'] ?? '',
+      code: json['code'] ?? '',
+      price: json['price'] ?? 0,
       // image: File(''),
       isFeatured: json['isFeatured'],
-      expirationMonths: json['expirationMonths'],
-      numOfCalories: json['numOfCalories'],
-      unitAmount: json['unitAmount'],
+      expirationMonths: json['expirationMonths'] ?? 0,
+      numOfCalories: json['numOfCalories'] ?? 0,
+      unitAmount: json['unitAmount'] ?? 0,
       isOrganic: json['isOrganic'],
       reviews: json['reviews'] != null
           ? List<ReviewModel>.from(
