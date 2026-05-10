@@ -4,15 +4,20 @@ import 'package:fruits_hub/feartures/home/domain/entites/bottom_navigation_bar_e
 import 'package:fruits_hub/feartures/home/presentation/views/widgets/nav_bar_item.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
-  const CustomBottomNavBar({super.key});
-
+  const CustomBottomNavBar({
+    super.key,
+    required this.selectedIndex,
+    required this.onItemSelected,
+  });
+  final int selectedIndex;
+  final ValueChanged<int> onItemSelected;
   @override
   State<CustomBottomNavBar> createState() => _CustomBottomNavBarState();
 }
 
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   int selectedIndex = 0;
-  List<BottomNavigationBarEntity> nav_items = [
+  List<BottomNavigationBarEntity> navItems = [
     BottomNavigationBarEntity(
       inActiveIcon: AppImages.assetsImagesInactiveHome,
       activeIcon: AppImages.assetsImagesActiveHome,
@@ -59,15 +64,14 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: List.generate(nav_items.length, (index) {
+        children: List.generate(navItems.length, (index) {
           return GestureDetector(
             onTap: () {
-              selectedIndex = index;
-              setState(() {});
+              widget.onItemSelected(index);
             },
             child: NavBarItem(
               isSelected: selectedIndex == index,
-              bottomNavigationBarEntity: nav_items[index],
+              bottomNavigationBarEntity: navItems[index],
             ),
           );
         }),
