@@ -6,6 +6,9 @@ class InactiveItemNavBar extends StatelessWidget {
   final String inactiveIcon;
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(inactiveIcon);
+    return Container(
+      color: Colors.transparent,
+      child: SvgPicture.asset(inactiveIcon),
+    );
   }
 }

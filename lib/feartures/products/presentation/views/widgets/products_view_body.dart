@@ -4,8 +4,7 @@ import 'package:fruits_hub/core/cubits/cubit/products_cubit.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/custom_app_bar.dart';
 import 'package:fruits_hub/core/widgets/search_text_field.dart';
-import 'package:fruits_hub/feartures/home/presentation/views/widgets/custom_home_app_bar.dart';
-import 'package:fruits_hub/feartures/home/presentation/views/widgets/fruit_selling_sliver_grid_bloc_builder.dart';
+import 'package:fruits_hub/feartures/home/presentation/views/widgets/products_sliver_grid_bloc_builder.dart';
 import 'package:fruits_hub/feartures/products/presentation/views/widgets/products_header.dart';
 
 class ProductsViewBody extends StatefulWidget {
@@ -43,7 +42,7 @@ class _ProductsViewBodyState extends State<ProductsViewBody> {
             ),
           ),
         ),
-        FruitSellingSliverGridBlocBuilder(),
+        ProductsSliverGridBlocBuilder(),
       ],
     );
   }

@@ -9,6 +9,6 @@ class GetCurrentView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> views = [HomeView(), ProductsView()];
-    return views[selectedIndex];
+    return IndexedStack(index: selectedIndex, children: views);
   }
 }
