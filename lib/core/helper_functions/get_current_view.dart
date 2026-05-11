@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/feartures/cart/presentation/cart_view.dart';
 import 'package:fruits_hub/feartures/home/presentation/views/home_view.dart';
 import 'package:fruits_hub/feartures/products/presentation/views/products_view.dart';
 
@@ -8,7 +9,7 @@ class GetCurrentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> views = [HomeView(), ProductsView()];
+    List<Widget> views = [HomeView(), ProductsView(), CartView()];
     return IndexedStack(index: selectedIndex, children: views);
   }
 }

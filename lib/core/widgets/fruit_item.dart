@@ -31,7 +31,10 @@ class FruitItem extends StatelessWidget {
                 ListTile(
                   trailing: CircleAvatar(
                     backgroundColor: AppColors.darkPrimaryColor,
-                    child: Icon(Icons.add, color: Colors.white),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.add, color: Colors.white),
+                    ),
                   ),
                   title: FittedBox(
                     child: Text(
