@@ -10,11 +10,26 @@ class CartViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(child: Column(children: [CartHeader()])),
-        CartProductsSliverList(),
-        // SliverToBoxAdapter(child: CustomButton(text: 'الدفع  120جنيه')),
+    return Stack(
+      children: [
+        CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: Column(children: [CartHeader()])),
+            SliverToBoxAdapter(
+              child: Divider(height: 16, color: Color(0xfff1f1f5)),
+            ),
+            CartProductsSliverList(),
+            SliverToBoxAdapter(
+              child: Divider(height: 16, color: Color(0xfff1f1f5)),
+            ),
+          ],
+        ),
+        Positioned(
+          left: 16,
+          right: 16,
+          bottom: MediaQuery.sizeOf(context).height * .07,
+          child: CustomButton(text: 'الدفع  120جنيه', onPressed: () {}),
+        ),
       ],
     );
   }

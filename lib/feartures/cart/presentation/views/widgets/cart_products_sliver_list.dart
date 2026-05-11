@@ -6,9 +6,16 @@ class CartProductsSliverList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverList.builder(
+    return SliverList.separated(
+      itemCount: 3,
+      separatorBuilder: (context, index) {
+        return Divider(height: 16, color: Color(0xfff1f1f5));
+      },
       itemBuilder: (context, index) {
-        return CartProductItem();
+        return Padding(
+          padding: EdgeInsetsGeometry.symmetric(horizontal: 16),
+          child: CartProductItem(),
+        );
       },
     );
   }

@@ -100,8 +100,12 @@ class AppImages {
   static const String assetsImagesSearchIcon = "assets/images/search_icon.svg";
 
   /// Assets for assetsImagesShape
-  /// assets/images/shape.png
+  /// assets/images/shape.svg
   static const String assetsImagesShape = "assets/images/shape.svg";
+
+  /// Assets for assetsImagesTrash
+  /// assets/images/trash.svg
+  static const String assetsImagesTrash = "assets/images/trash.svg";
 
   /// Assets for assetsImagesVector1
   /// assets/images/Vector1.svg

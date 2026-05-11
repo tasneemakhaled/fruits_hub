@@ -8,7 +8,7 @@ class CartHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 41,
+      padding: EdgeInsets.symmetric(vertical: 16),
       width: double.infinity,
       decoration: BoxDecoration(color: Color(0xffEBF9F1)),
       child: Center(
