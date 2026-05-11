@@ -3,11 +3,12 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constants/app_images.dart';
+import 'package:fruits_hub/feartures/cart/domain/entites/cart_item_entity.dart';
 import 'package:fruits_hub/feartures/cart/presentation/views/widgets/cart_items_action_buttons.dart';
 
 class CartProductItem extends StatelessWidget {
-  const CartProductItem({super.key});
-
+  const CartProductItem({super.key, required this.cartItemEntity});
+  final CartItemEntity cartItemEntity;
   @override
   Widget build(BuildContext context) {
     return IntrinsicHeight(
@@ -21,7 +22,7 @@ class CartProductItem extends StatelessWidget {
               child: Image.network(
                 width: 53,
                 height: 40,
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJPNwFZomwx7tvRUKd30ed0Xswtog77KrptA&s',
+                cartItemEntity.productsEntity.imageUrl!,
               ),
             ),
           ),
@@ -33,7 +34,10 @@ class CartProductItem extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text('بطيخ', style: TextStyles.bold13),
+                    Text(
+                      cartItemEntity.productsEntity.name,
+                      style: TextStyles.bold13,
+                    ),
                     Spacer(),
 
                     GestureDetector(
@@ -44,7 +48,7 @@ class CartProductItem extends StatelessWidget {
                 ),
                 SizedBox(height: 6),
                 Text(
-                  '3كم',
+                  '${cartItemEntity.calculateTotalWeight()}كم',
                   style: TextStyles.regular13.copyWith(
                     color: Color(0xffF4A91F),
                   ),
@@ -55,7 +59,7 @@ class CartProductItem extends StatelessWidget {
                     CartItemsActionButtons(),
                     Spacer(),
                     Text(
-                      '60جنيه',
+                      '${cartItemEntity.calculateTotalPrice()}جنيه',
                       style: TextStyles.bold13.copyWith(
                         color: Color(0xffF4A91F),
                       ),
