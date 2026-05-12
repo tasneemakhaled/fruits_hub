@@ -28,7 +28,17 @@ class _MainViewState extends State<MainView> {
             setState(() {});
           },
         ),
-        body: GetCurrentView(selectedIndex: selectedIndex),
+        body: BlocListener<CartCubit, CartState>(
+          listener: (context, state) {
+            if (state is CartItemAdded) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('Product added to cart successfully')),
+              );
+            }
+          },
+
+          child: GetCurrentView(selectedIndex: selectedIndex),
+        ),
       ),
     );
   }
