@@ -30,4 +30,12 @@ class CartEntity {
     }
     return CartItemEntity(productsEntity: productsEntity, count: 1);
   }
+
+  double calculateTotalPrice() {
+    double totalPrice = 0;
+    for (var element in cartEntites) {
+      totalPrice += element.calculateTotalPrice();
+    }
+    return totalPrice;
+  }
 }
