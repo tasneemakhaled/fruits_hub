@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruits_hub/core/utils/app_colors.dart';
-import 'package:fruits_hub/core/utils/app_text_styles.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:fruits_hub/core/widgets/custom_button.dart';
+import 'package:fruits_hub/feartures/cart/presentation/view_models/cubit/cart_cubit.dart';
 import 'package:fruits_hub/feartures/cart/presentation/views/widgets/cart_header.dart';
 import 'package:fruits_hub/feartures/cart/presentation/views/widgets/cart_products_sliver_list.dart';
 
@@ -16,11 +17,15 @@ class CartViewBody extends StatelessWidget {
           slivers: [
             SliverToBoxAdapter(child: Column(children: [CartHeader()])),
             SliverToBoxAdapter(
-              child: Divider(height: 16, color: Color(0xfff1f1f5)),
+              child: context.read<CartCubit>().cartEntity.cartEntites.isNotEmpty
+                  ? Divider(height: 16, color: Color(0xfff1f1f5))
+                  : SizedBox(), // remove dicider if there is no added cart products
             ),
             CartProductsSliverList(cartEntities: []),
             SliverToBoxAdapter(
-              child: Divider(height: 16, color: Color(0xfff1f1f5)),
+              child: context.read<CartCubit>().cartEntity.cartEntites.isNotEmpty
+                  ? Divider(height: 16, color: Color(0xfff1f1f5))
+                  : SizedBox(), // remove dicider if there is no added cart products
             ),
           ],
         ),

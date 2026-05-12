@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:fruits_hub/core/entities/products_entity.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
-import 'package:fruits_hub/core/utils/constants/app_images.dart';
+
 import 'package:fruits_hub/core/widgets/custom_network_image.dart';
+import 'package:fruits_hub/feartures/cart/presentation/view_models/cubit/cart_cubit.dart';
 
 class FruitItem extends StatelessWidget {
   const FruitItem({super.key, required this.productsEntity});
@@ -32,7 +35,11 @@ class FruitItem extends StatelessWidget {
                   trailing: CircleAvatar(
                     backgroundColor: AppColors.darkPrimaryColor,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.read<CartCubit>().addItemToCart(
+                          productsEntity: productsEntity,
+                        );
+                      },
                       icon: Icon(Icons.add, color: Colors.white),
                     ),
                   ),

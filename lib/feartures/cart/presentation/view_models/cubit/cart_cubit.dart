@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:fruits_hub/core/entities/products_entity.dart';
 import 'package:fruits_hub/feartures/cart/domain/entites/cart_entity.dart';
 import 'package:fruits_hub/feartures/cart/domain/entites/cart_item_entity.dart';
 import 'package:meta/meta.dart';
@@ -8,13 +9,21 @@ part 'cart_state.dart';
 class CartCubit extends Cubit<CartState> {
   CartCubit() : super(CartInitial());
   CartEntity cartEntity = CartEntity(cartEntites: []);
-  addItemToCart({required CartItemEntity cartItemEntity}) {
+  addItemToCart({required ProductsEntity productsEntity}) {
+    CartItemEntity cartItemEntity = CartItemEntity(
+      productsEntity: productsEntity,
+    );
+    if (cartEntity.isItemExists(productsEntity)) {
+      cartItemEntity.increaseCount();
+    } else {
+      cartItemEntity = CartItemEntity(productsEntity: productsEntity, count: 1);
+    }
     cartEntity.addItemToCart(cartItemEntity);
     emit(CartItemAdded());
   }
 
-  removeItemFromCart({required CartItemEntity cartItemEntity}) {
-    cartEntity.removeItemFromCart(cartItemEntity);
-    emit(CartItemRemoved());
-  }
+  // removeItemFromCart({required CartItemEntity cartItemEntity}) {
+  //   cartEntity.removeItemFromCart(cartItemEntity);
+  //   emit(CartItemRemoved());
+  // }
 }

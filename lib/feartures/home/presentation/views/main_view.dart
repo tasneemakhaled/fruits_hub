@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruits_hub/core/helper_functions/get_current_view.dart';
+import 'package:fruits_hub/feartures/cart/presentation/view_models/cubit/cart_cubit.dart';
 import 'package:fruits_hub/feartures/home/presentation/views/widgets/custom_bottom_nav_bar.dart';
 
 class MainView extends StatefulWidget {
@@ -15,15 +17,19 @@ class _MainViewState extends State<MainView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: CustomBottomNavBar(
-        selectedIndex: selectedIndex,
-        onItemSelected: (value) {
-          selectedIndex = value;
-          setState(() {});
-        },
+    return BlocProvider(
+      create: (context) => CartCubit(),
+      child: Scaffold(
+        // provide cart cubit here
+        bottomNavigationBar: CustomBottomNavBar(
+          selectedIndex: selectedIndex,
+          onItemSelected: (value) {
+            selectedIndex = value;
+            setState(() {});
+          },
+        ),
+        body: GetCurrentView(selectedIndex: selectedIndex),
       ),
-      body: GetCurrentView(selectedIndex: selectedIndex),
     );
   }
 }
