@@ -21,7 +21,9 @@ class CartViewBody extends StatelessWidget {
                   ? Divider(height: 16, color: Color(0xfff1f1f5))
                   : SizedBox(), // remove dicider if there is no added cart products
             ),
-            CartProductsSliverList(cartEntities: []),
+            CartProductsSliverList(
+              cartEntities: context.read<CartCubit>().cartEntity.cartEntites,
+            ),
             SliverToBoxAdapter(
               child: context.read<CartCubit>().cartEntity.cartEntites.isNotEmpty
                   ? Divider(height: 16, color: Color(0xfff1f1f5))
