@@ -32,7 +32,7 @@ class _MainViewState extends State<MainView> {
           listener: (context, state) {
             if (state is CartItemAdded) {
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Product added to cart successfully')),
+                SnackBar(content: Text('تم اضافة المنتج للسلة بنجاح')),
               );
             }
           },

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:fruits_hub/core/utils/app_colors.dart';
+import 'package:fruits_hub/feartures/cart/domain/entites/cart_item_entity.dart';
 
 class CartItemsActionButtons extends StatelessWidget {
-  const CartItemsActionButtons({super.key});
-
+  const CartItemsActionButtons({super.key, required this.cartItemEntity});
+  final CartItemEntity cartItemEntity;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -22,7 +24,7 @@ class CartItemsActionButtons extends StatelessWidget {
           ),
         ),
         SizedBox(width: 10),
-        Text('1'),
+        Text('${cartItemEntity.count}'),
         SizedBox(width: 10),
         SizedBox(
           width: 24,

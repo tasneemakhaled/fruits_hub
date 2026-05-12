@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/utils/constants/app_images.dart';
 import 'package:fruits_hub/feartures/cart/domain/entites/cart_item_entity.dart';
+import 'package:fruits_hub/feartures/cart/presentation/view_models/cubit/cart_cubit.dart';
 import 'package:fruits_hub/feartures/cart/presentation/views/widgets/cart_items_action_buttons.dart';
 
 class CartProductItem extends StatelessWidget {
@@ -41,7 +43,11 @@ class CartProductItem extends StatelessWidget {
                     Spacer(),
 
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        context.read<CartCubit>().removeItemFromCart(
+                          cartItemEntity: cartItemEntity,
+                        );
+                      },
                       child: SvgPicture.asset(AppImages.assetsImagesTrash),
                     ),
                   ],
@@ -56,7 +62,7 @@ class CartProductItem extends StatelessWidget {
                 SizedBox(height: 6),
                 Row(
                   children: [
-                    CartItemsActionButtons(),
+                    CartItemsActionButtons(cartItemEntity: cartItemEntity),
                     Spacer(),
                     Text(
                       '${cartItemEntity.calculateTotalPrice()}جنيه',
