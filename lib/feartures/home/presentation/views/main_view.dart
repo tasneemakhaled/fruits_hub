@@ -35,6 +35,11 @@ class _MainViewState extends State<MainView> {
                 SnackBar(content: Text('تم اضافة المنتج للسلة بنجاح')),
               );
             }
+            if (state is CartItemRemoved) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text('تم حذف المنتج من السلة بنجاح')),
+              );
+            }
           },
 
           child: GetCurrentView(selectedIndex: selectedIndex),
