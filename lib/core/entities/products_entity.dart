@@ -1,8 +1,7 @@
-import 'dart:io';
-
+import 'package:equatable/equatable.dart';
 import 'package:fruits_hub/core/entities/review_entity.dart';
 
-class ProductsEntity {
+class ProductsEntity extends Equatable {
   final String name;
   final String description;
   final String code;
@@ -31,4 +30,8 @@ class ProductsEntity {
     required this.unitAmount,
     required this.reviews,
   });
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => ([code]); // if 2 products have the same code then they are equatable
 }

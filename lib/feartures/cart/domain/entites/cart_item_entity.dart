@@ -1,6 +1,7 @@
+import 'package:equatable/equatable.dart';
 import 'package:fruits_hub/core/entities/products_entity.dart';
 
-class CartItemEntity {
+class CartItemEntity extends Equatable {
   final ProductsEntity productsEntity;
   int count;
 
@@ -20,4 +21,8 @@ class CartItemEntity {
   decreaseCount() {
     count--;
   }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => ([productsEntity]); // to make comparison between 2 objects
 }
