@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
 class InactiveStepItem extends StatelessWidget {
-  const InactiveStepItem({super.key, required this.title});
+  const InactiveStepItem({super.key, required this.index, required this.title});
+  final int index;
   final String title;
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class InactiveStepItem extends StatelessWidget {
         CircleAvatar(
           radius: 11.5,
           backgroundColor: Color(0xfff2f3f3),
-          child: Text('2', style: AppStyles.semiBold13),
+          child: Text(index.toString(), style: AppStyles.semiBold13),
         ),
 
         SizedBox(width: 4),
