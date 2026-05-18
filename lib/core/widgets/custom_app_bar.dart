@@ -3,9 +3,13 @@ import 'package:flutter_svg/svg.dart';
 import 'package:fruits_hub/core/utils/constants/app_images.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.title, this.isVisible = true});
+  const CustomAppBar({
+    super.key,
+    required this.title,
+    this.isNotificationVisible = true,
+  });
   final Widget title;
-  final bool isVisible;
+  final bool isNotificationVisible;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -15,7 +19,7 @@ class CustomAppBar extends StatelessWidget {
       title: title,
       actions: [
         Visibility(
-          visible: isVisible,
+          visible: isNotificationVisible,
           child: SvgPicture.asset(AppImages.assetsImagesNotificationIcon),
         ),
       ],
