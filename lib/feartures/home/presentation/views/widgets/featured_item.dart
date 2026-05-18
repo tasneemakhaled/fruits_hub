@@ -39,16 +39,14 @@ class FeaturedItem extends StatelessWidget {
                         SizedBox(height: 25),
                         Text(
                           'عروض العيد',
-                          style: TextStyles.regular13.copyWith(
+                          style: AppStyles.regular13.copyWith(
                             color: Colors.white,
                           ),
                         ),
                         Spacer(),
                         Text(
                           'خصم 25%',
-                          style: TextStyles.bold19.copyWith(
-                            color: Colors.white,
-                          ),
+                          style: AppStyles.bold19.copyWith(color: Colors.white),
                         ),
                         SizedBox(height: 10),
                         ElevatedButton(
@@ -60,7 +58,7 @@ class FeaturedItem extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             'تسوق الأن',
-                            style: TextStyles.bold13.copyWith(
+                            style: AppStyles.bold13.copyWith(
                               color: AppColors.darkPrimaryColor,
                             ),
                           ),

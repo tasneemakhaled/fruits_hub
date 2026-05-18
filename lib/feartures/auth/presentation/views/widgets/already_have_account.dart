@@ -11,7 +11,7 @@ class AlreadyHaveAccount extends StatelessWidget {
       children: [
         Text(
           'تمتلك حساب بالفعل؟',
-          style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),
+          style: AppStyles.semiBold16.copyWith(color: Color(0xff949D9E)),
         ),
         TextButton(
           onPressed: () {
@@ -20,7 +20,7 @@ class AlreadyHaveAccount extends StatelessWidget {
           },
           child: Text(
             'تسجيل الدخول',
-            style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),
+            style: AppStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),
           ),
         ),
       ],

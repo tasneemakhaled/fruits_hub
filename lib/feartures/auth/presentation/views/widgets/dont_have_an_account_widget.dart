@@ -12,7 +12,7 @@ class DontHaveAnAccountWidget extends StatelessWidget {
       children: [
         Text(
           'لا تمتلك حساب؟ ',
-          style: TextStyles.semiBold16.copyWith(color: Color(0xff949D9E)),
+          style: AppStyles.semiBold16.copyWith(color: Color(0xff949D9E)),
         ),
         GestureDetector(
           onTap: () {
@@ -20,7 +20,7 @@ class DontHaveAnAccountWidget extends StatelessWidget {
           },
           child: Text(
             'قم بانشاء حساب',
-            style: TextStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),
+            style: AppStyles.semiBold16.copyWith(color: Color(0xff1B5E37)),
           ),
         ),
       ],

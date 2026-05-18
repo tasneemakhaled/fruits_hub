@@ -21,7 +21,7 @@ class SignUpView extends StatelessWidget {
             onPressed: () {},
             icon: Icon(Icons.arrow_back_ios_new),
           ),
-          title: Text('حساب جديد', style: TextStyles.bold19),
+          title: Text('حساب جديد', style: AppStyles.bold19),
         ),
         body: BlocConsumerSignupViewBody(),
       ),

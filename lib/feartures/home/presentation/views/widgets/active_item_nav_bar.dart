@@ -28,7 +28,7 @@ class ActiveItemNavBar extends StatelessWidget {
           SizedBox(width: 4),
           Text(
             label,
-            style: TextStyles.semiBold11.copyWith(
+            style: AppStyles.semiBold11.copyWith(
               color: AppColors.darkPrimaryColor,
             ),
           ),

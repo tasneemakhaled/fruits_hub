@@ -30,7 +30,7 @@ class _ProductsViewBodyState extends State<ProductsViewBody> {
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
               children: [
-                CustomAppBar(title: Text('المنتجات', style: TextStyles.bold19)),
+                CustomAppBar(title: Text('المنتجات', style: AppStyles.bold19)),
                 SizedBox(height: 16),
                 SearchTextField(),
                 SizedBox(height: 16),

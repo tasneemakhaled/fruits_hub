@@ -16,7 +16,7 @@ class CartHeader extends StatelessWidget {
       child: Center(
         child: Text(
           'لديك ${context.watch<CartCubit>().cartEntity.cartEntites.length} منتجات في سله التسوق',
-          style: TextStyles.regular13.copyWith(
+          style: AppStyles.regular13.copyWith(
             color: AppColors.darkPrimaryColor,
           ),
         ),

@@ -23,7 +23,7 @@ class LoginView extends StatelessWidget {
             },
             icon: Icon(Icons.arrow_back_ios),
           ),
-          title: Text('تسجيل الدخول', style: TextStyles.bold19),
+          title: Text('تسجيل الدخول', style: AppStyles.bold19),
         ),
         body: BlocConsumerLoginViewBody(),
       ),

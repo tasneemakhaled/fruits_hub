@@ -21,16 +21,16 @@ class CustomOnboaringPageView extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('مرحبًا بك في', style: TextStyles.bold23),
+              Text('مرحبًا بك في', style: AppStyles.bold23),
               Text(
                 ' HUB',
-                style: TextStyles.bold23.copyWith(
+                style: AppStyles.bold23.copyWith(
                   color: AppColors.secondaryColor,
                 ),
               ),
               Text(
                 'Fruit',
-                style: TextStyles.bold23.copyWith(
+                style: AppStyles.bold23.copyWith(
                   color: AppColors.darkPrimaryColor,
                 ),
               ),
@@ -43,7 +43,7 @@ class CustomOnboaringPageView extends StatelessWidget {
           onBoardingImage: AppImages.assetsImagesOnboarding2,
           subTitle:
               'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
-          title: Text('ابحث وتسوق', style: TextStyles.bold23),
+          title: Text('ابحث وتسوق', style: AppStyles.bold23),
         ),
       ],
     );

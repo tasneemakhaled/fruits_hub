@@ -53,7 +53,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'نسيت كلمة المرور؟',
-                  style: TextStyles.semiBold13.copyWith(
+                  style: AppStyles.semiBold13.copyWith(
                     color: Color(0xff2D9F5D),
                   ),
                 ),

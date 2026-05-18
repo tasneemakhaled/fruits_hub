@@ -40,7 +40,7 @@ class SearchTextField extends StatelessWidget {
             ),
           ),
           hintText: 'ابحث عن......',
-          hintStyle: TextStyles.regular13.copyWith(color: Color(0xff949D9E)),
+          hintStyle: AppStyles.regular13.copyWith(color: Color(0xff949D9E)),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(16),
             borderSide: BorderSide(color: Colors.grey.shade100),

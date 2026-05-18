@@ -46,7 +46,7 @@ class FruitItem extends StatelessWidget {
                   title: FittedBox(
                     child: Text(
                       productsEntity.name,
-                      style: TextStyles.semiBold13,
+                      style: AppStyles.semiBold13,
                     ),
                   ),
                   subtitle: Text.rich(
@@ -54,13 +54,13 @@ class FruitItem extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: productsEntity.price.toString(),
-                          style: TextStyles.bold13.copyWith(
+                          style: AppStyles.bold13.copyWith(
                             color: Color(0xfff3bf60),
                           ),
                         ),
                         TextSpan(
                           text: 'جنيه/الكيلو',
-                          style: TextStyles.bold13.copyWith(
+                          style: AppStyles.bold13.copyWith(
                             color: Color(0xfff5d69c),
                           ),
                         ),

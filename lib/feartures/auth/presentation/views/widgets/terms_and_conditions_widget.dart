@@ -42,13 +42,13 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
               children: [
                 TextSpan(
                   text: 'من خلال إنشاء حساب، فإنك توافق على ',
-                  style: TextStyles.semiBold13.copyWith(
+                  style: AppStyles.semiBold13.copyWith(
                     color: Color(0xff949D9E),
                   ),
                 ),
                 TextSpan(
                   text: 'الشروط والأحكام الخاصة بنا',
-                  style: TextStyles.semiBold13.copyWith(
+                  style: AppStyles.semiBold13.copyWith(
                     color: AppColors.lightPrimaryColor,
                   ),
                 ),

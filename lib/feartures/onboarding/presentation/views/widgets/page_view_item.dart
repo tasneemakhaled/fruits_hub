@@ -49,7 +49,7 @@ class PageViewItem extends StatelessWidget {
                         LoginView.routeName,
                       );
                     },
-                    child: Text('تخط', style: TextStyles.regular13),
+                    child: Text('تخط', style: AppStyles.regular13),
                   ),
                 ),
               ),
@@ -70,7 +70,7 @@ class PageViewItem extends StatelessWidget {
           child: Text(
             subTitle,
             textAlign: TextAlign.center,
-            style: TextStyles.semiBold13.copyWith(color: Color(0xff4E5456)),
+            style: AppStyles.semiBold13.copyWith(color: Color(0xff4E5456)),
           ),
         ),
       ],

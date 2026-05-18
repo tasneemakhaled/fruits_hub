@@ -8,7 +8,7 @@ class ProductsHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [Text('$productsLength نتائج', style: TextStyles.bold16)],
+      children: [Text('$productsLength نتائج', style: AppStyles.bold16)],
     );
   }
 }

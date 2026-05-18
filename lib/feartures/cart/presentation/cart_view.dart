@@ -11,7 +11,7 @@ class CartView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         leading: Icon(Icons.arrow_back_ios),
-        title: Text('السلة', style: TextStyles.bold19),
+        title: Text('السلة', style: AppStyles.bold19),
         centerTitle: true,
       ),
       body: CartViewBody(),

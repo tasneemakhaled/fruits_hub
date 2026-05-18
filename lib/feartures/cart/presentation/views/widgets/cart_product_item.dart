@@ -37,7 +37,7 @@ class CartProductItem extends StatelessWidget {
                   children: [
                     Text(
                       cartItemEntity.productsEntity.name,
-                      style: TextStyles.bold13,
+                      style: AppStyles.bold13,
                     ),
                     Spacer(),
 
@@ -54,9 +54,7 @@ class CartProductItem extends StatelessWidget {
                 SizedBox(height: 6),
                 Text(
                   '${cartItemEntity.calculateTotalWeight()}كم',
-                  style: TextStyles.regular13.copyWith(
-                    color: Color(0xffF4A91F),
-                  ),
+                  style: AppStyles.regular13.copyWith(color: Color(0xffF4A91F)),
                 ),
                 SizedBox(height: 6),
                 Row(
@@ -65,7 +63,7 @@ class CartProductItem extends StatelessWidget {
                     Spacer(),
                     Text(
                       '${cartItemEntity.calculateTotalPrice()}جنيه',
-                      style: TextStyles.bold13.copyWith(
+                      style: AppStyles.bold13.copyWith(
                         color: Color(0xffF4A91F),
                       ),
                     ),

@@ -23,9 +23,9 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               Text(
                 'صباح الخير!..',
-                style: TextStyles.regular16.copyWith(color: Color(0xff949D9E)),
+                style: AppStyles.regular16.copyWith(color: Color(0xff949D9E)),
               ),
-              Text(getUser().name, style: TextStyles.bold16),
+              Text(getUser().name, style: AppStyles.bold16),
             ],
           ),
         ],
