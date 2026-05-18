@@ -5,6 +5,7 @@ import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/feartures/cart/presentation/view_models/cubit/cart_cubit.dart';
 import 'package:fruits_hub/feartures/cart/presentation/views/widgets/cart_header.dart';
 import 'package:fruits_hub/feartures/cart/presentation/views/widgets/cart_products_sliver_list.dart';
+import 'package:fruits_hub/feartures/checkout/presentation/views/checkout_view.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
@@ -41,7 +42,9 @@ class CartViewBody extends StatelessWidget {
 
             /// listen =watch not build=read
             /// // to do format to price if 1.0 to 1 if 1.23445 to 1.5 and so on
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(CheckoutView.routeName);
+            },
           ),
         ),
       ],
