@@ -23,7 +23,6 @@ class _CheckoutStepsListViewState extends State<CheckoutStepsListView> {
           onTap: () {
             isSelected = index;
             selectedIndex = index;
-
             setState(() {});
           },
           child: StepItem(
