@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/inactive_step_item.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/step_item.dart';
 
 class CheckoutStepsListView extends StatefulWidget {
