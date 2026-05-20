@@ -25,6 +25,7 @@ class ConfirmationView extends StatelessWidget {
                 ],
               ),
               Row(children: [Text('التوصيل  :'), Spacer(), Text('30جنية')]),
+              Divider(color: Color(0xffCACECE)),
               Row(children: [Text('الكلي'), Spacer(), Text('180 جنيه')]),
             ],
           ),
