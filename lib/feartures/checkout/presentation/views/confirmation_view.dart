@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PayementView extends StatelessWidget {
-  const PayementView({super.key});
+class ConfirmationView extends StatelessWidget {
+  const ConfirmationView({super.key});
 
   @override
   Widget build(BuildContext context) {
