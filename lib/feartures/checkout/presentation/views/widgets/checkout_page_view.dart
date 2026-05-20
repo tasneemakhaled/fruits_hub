@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/address_view.dart';
+import 'package:fruits_hub/feartures/checkout/presentation/views/confirmation_view.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/payement_view.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/shipping_view.dart';
 
@@ -11,7 +12,12 @@ class CheckoutPageView extends StatelessWidget {
     return PageView(
       physics: NeverScrollableScrollPhysics(),
       controller: pageController,
-      children: [ShippingView(), AddressView(), PayementView(), SizedBox()],
+      children: [
+        ShippingView(),
+        AddressView(),
+        PayementView(),
+        ConfirmationView(),
+      ],
     );
   }
 }

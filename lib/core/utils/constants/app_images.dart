@@ -73,6 +73,10 @@ class AppImages {
   /// assets/images/logo.svg
   static const String assetsImagesLogo = "assets/images/logo.svg";
 
+  /// Assets for assetsImagesMastercard
+  /// assets/images/Mastercard.png
+  static const String assetsImagesMastercard = "assets/images/Mastercard.png";
+
   /// Assets for assetsImagesNotificationIcon
   /// assets/images/notification_icon .svg
   static const String assetsImagesNotificationIcon =
@@ -85,6 +89,14 @@ class AppImages {
   /// Assets for assetsImagesOnboarding2
   /// assets/images/onboarding2.svg
   static const String assetsImagesOnboarding2 = "assets/images/onboarding2.svg";
+
+  /// Assets for assetsImagesPay
+  /// assets/images/Pay.png
+  static const String assetsImagesPay = "assets/images/Pay.png";
+
+  /// Assets for assetsImagesPaypal
+  /// assets/images/Paypal.png
+  static const String assetsImagesPaypal = "assets/images/Paypal.png";
 
   /// Assets for assetsImagesPlant
   /// assets/images/plant.svg
@@ -114,6 +126,10 @@ class AppImages {
   /// Assets for assetsImagesVector2
   /// assets/images/Vector2.svg
   static const String assetsImagesVector2 = "assets/images/Vector2.svg";
+
+  /// Assets for assetsImagesVisa
+  /// assets/images/visa.png
+  static const String assetsImagesVisa = "assets/images/visa.png";
 
   /// Assets for assetsImagesWatermelon
   /// assets/images/watermelon.png
