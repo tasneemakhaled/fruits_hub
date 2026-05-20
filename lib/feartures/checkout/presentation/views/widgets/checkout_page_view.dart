@@ -11,7 +11,7 @@ class CheckoutPageView extends StatelessWidget {
     return PageView(
       physics: NeverScrollableScrollPhysics(),
       controller: pageController,
-      children: [ShippingView(), AddressView(), PayementView()],
+      children: [ShippingView(), AddressView(), PayementView(), SizedBox()],
     );
   }
 }
