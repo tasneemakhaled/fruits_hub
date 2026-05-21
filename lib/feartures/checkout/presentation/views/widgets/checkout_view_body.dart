@@ -8,6 +8,7 @@ import 'package:fruits_hub/feartures/checkout/domain/entities/order_entity.dart'
 
 import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/checkout_page_view.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/checkout_steps_list_view.dart';
+import 'package:provider/provider.dart';
 
 class CheckoutViewBody extends StatefulWidget {
   const CheckoutViewBody({super.key});
@@ -19,6 +20,10 @@ class CheckoutViewBody extends StatefulWidget {
 class _CheckoutViewBodyState extends State<CheckoutViewBody> {
   late PageController pageController;
   int selectedIndex = 0;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final ValueNotifier<AutovalidateMode> valueNotifier = ValueNotifier(
+    AutovalidateMode.disabled, // listen to streams
+  );
 
   @override
   void initState() {
@@ -29,6 +34,13 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
       setState(() {});
     });
     // selectedIndex = pageController.page!.toInt();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    valueNotifier.dispose();
+    super.dispose();
   }
 
   @override
@@ -47,18 +59,21 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
             pageController: pageController,
           ),
           SizedBox(height: 16),
-          Expanded(child: CheckoutPageView(pageController: pageController)),
+          Expanded(
+            child: CheckoutPageView(
+              valueListenable: valueNotifier,
+              pageController: pageController,
+              formKey: formKey,
+            ),
+          ),
           CustomButton(
             text: selectedIndex > 1 ? 'تأكيد الطلب' : 'التالي',
             onPressed: () {
-              if (context.read<OrderEntity>().payWithCash != null) {
-                pageController.animateToPage(
-                  selectedIndex + 1,
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.ease,
-                );
-              } else {
-                buildErrorBar(context, 'يرجي تحديد طريقة الدفع');
+              if (selectedIndex == 0) {
+                validateShippingSection(context);
+              }
+              if (selectedIndex == 1) {
+                handelAddressValidation();
               }
             },
           ),
@@ -66,5 +81,30 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
         ],
       ),
     );
+  }
+
+  void validateShippingSection(BuildContext context) {
+    if (context.read<OrderEntity>().payWithCash != null) {
+      pageController.animateToPage(
+        selectedIndex + 1,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.ease,
+      );
+    } else {
+      buildErrorBar(context, 'يرجي تحديد طريقة الدفع');
+    }
+  }
+
+  void handelAddressValidation() {
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+      pageController.animateToPage(
+        selectedIndex + 1,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.ease,
+      );
+    } else {
+      valueNotifier.value = AutovalidateMode.always;
+    }
   }
 }

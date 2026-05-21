@@ -5,7 +5,7 @@ import 'package:fruits_hub/feartures/checkout/domain/entities/address_entity.dar
 class OrderEntity {
   final CartEntity cartEntity;
   bool? payWithCash;
-  final AddressEntity? addressEntity;
+  AddressEntity? addressEntity = AddressEntity();
 
   OrderEntity({required this.cartEntity, this.payWithCash, this.addressEntity});
 }

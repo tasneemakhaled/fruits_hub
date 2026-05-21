@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/feartures/cart/domain/entites/cart_entity.dart';
-import 'package:fruits_hub/feartures/cart/domain/entites/cart_item_entity.dart';
 import 'package:fruits_hub/feartures/checkout/domain/entities/order_entity.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/checkout_view_body.dart';
 import 'package:provider/provider.dart';
