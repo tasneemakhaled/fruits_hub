@@ -6,6 +6,7 @@ import 'package:fruits_hub/core/widgets/custom_button.dart';
 import 'package:fruits_hub/feartures/cart/presentation/view_models/cubit/cart_cubit.dart';
 import 'package:fruits_hub/feartures/cart/presentation/views/widgets/cart_header.dart';
 import 'package:fruits_hub/feartures/cart/presentation/views/widgets/cart_products_sliver_list.dart';
+import 'package:fruits_hub/feartures/checkout/domain/entities/order_entity.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/checkout_view.dart';
 
 class CartViewBody extends StatelessWidget {
@@ -49,10 +50,7 @@ class CartViewBody extends StatelessWidget {
                   context.read<CartCubit>().cartEntity.cartEntites.isNotEmpty
                       ? Navigator.of(context).pushNamed(
                           CheckoutView.routeName,
-                          arguments: context
-                              .read<CartCubit>()
-                              .cartEntity
-                              .cartEntites,
+                          arguments: context.read<CartCubit>().cartEntity,
                         )
                       : buildErrorBar(context, 'لا توجد منتجات فالسلة');
                 },
