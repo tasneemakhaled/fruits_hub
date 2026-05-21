@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/custom_app_bar.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
+
 import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/checkout_page_view.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/checkout_steps_list_view.dart';
 
@@ -12,13 +13,19 @@ class CheckoutViewBody extends StatefulWidget {
   State<CheckoutViewBody> createState() => _CheckoutViewBodyState();
 }
 
-late PageController pageController;
-
 class _CheckoutViewBodyState extends State<CheckoutViewBody> {
+  late PageController pageController;
+  int selectedIndex = 0;
+
   @override
   void initState() {
-    pageController = PageController();
     super.initState();
+    pageController = PageController();
+    pageController.addListener(() {
+      selectedIndex = pageController.page!.toInt();
+      setState(() {});
+    });
+    // selectedIndex = pageController.page!.toInt();
   }
 
   @override
@@ -32,13 +39,17 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
             title: Text('الشحن', style: AppStyles.bold19),
           ),
           SizedBox(height: 20),
-          CheckoutStepsListView(),
+          CheckoutStepsListView(
+            selectedIndex: selectedIndex,
+            pageController: pageController,
+          ),
           SizedBox(height: 16),
           Expanded(child: CheckoutPageView(pageController: pageController)),
           CustomButton(
-            text: 'التالي',
+            text: selectedIndex > 1 ? 'تأكيد الطلب' : 'التالي',
             onPressed: () {
-              pageController.nextPage(
+              pageController.animateToPage(
+                selectedIndex + 1,
                 duration: const Duration(milliseconds: 300),
                 curve: Curves.ease,
               );
