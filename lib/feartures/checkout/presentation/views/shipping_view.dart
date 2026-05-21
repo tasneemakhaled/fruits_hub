@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruits_hub/feartures/cart/presentation/view_models/cubit/cart_cubit.dart';
 import 'package:fruits_hub/feartures/checkout/domain/entities/order_entity.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/shipping_item.dart';
 
@@ -16,11 +15,13 @@ int selectedIndex = -1;
 class _ShippingViewState extends State<ShippingView> {
   @override
   Widget build(BuildContext context) {
+    var orderEntity = context.read<OrderEntity>();
     return Column(
       children: [
         ShippingItem(
           onTap: () {
             selectedIndex = 0;
+            orderEntity.payWithCash = true;
             setState(() {});
           },
           isSelected: selectedIndex == 0,
@@ -33,6 +34,7 @@ class _ShippingViewState extends State<ShippingView> {
         ShippingItem(
           onTap: () {
             selectedIndex = 1;
+            orderEntity.payWithCash = false;
             setState(() {});
           },
           isSelected: selectedIndex == 1,

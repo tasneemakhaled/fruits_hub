@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruits_hub/core/helper_functions/build_error_bar.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/core/widgets/custom_app_bar.dart';
 import 'package:fruits_hub/core/widgets/custom_button.dart';
+import 'package:fruits_hub/feartures/checkout/domain/entities/order_entity.dart';
 
 import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/checkout_page_view.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/widgets/checkout_steps_list_view.dart';
@@ -48,11 +51,15 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
           CustomButton(
             text: selectedIndex > 1 ? 'تأكيد الطلب' : 'التالي',
             onPressed: () {
-              pageController.animateToPage(
-                selectedIndex + 1,
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.ease,
-              );
+              if (context.read<OrderEntity>().payWithCash != null) {
+                pageController.animateToPage(
+                  selectedIndex + 1,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.ease,
+                );
+              } else {
+                buildErrorBar(context, 'يرجي تحديد طريقة الدفع');
+              }
             },
           ),
           SizedBox(height: 32),
