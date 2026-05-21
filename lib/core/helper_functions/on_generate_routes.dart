@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/login_view.dart';
 import 'package:fruits_hub/feartures/auth/presentation/views/sign_up_view.dart';
+import 'package:fruits_hub/feartures/cart/domain/entites/cart_item_entity.dart';
 import 'package:fruits_hub/feartures/cart/presentation/cart_view.dart';
 import 'package:fruits_hub/feartures/checkout/presentation/views/checkout_view.dart';
 import 'package:fruits_hub/feartures/home/presentation/views/main_view.dart';
@@ -25,7 +26,11 @@ Route<dynamic> onGenerateRoute(RouteSettings setting) {
     case CartView.routeName:
       return MaterialPageRoute(builder: (context) => CartView());
     case CheckoutView.routeName:
-      return MaterialPageRoute(builder: (context) => CheckoutView());
+      return MaterialPageRoute(
+        builder: (context) => CheckoutView(
+          cartEntites: setting.arguments as List<CartItemEntity>,
+        ),
+      );
     // case BestSellingView.routeName:
     //   return MaterialPageRoute(builder: (context) => BestSellingView());
     default:
